@@ -133,21 +133,8 @@ dotnet test tests/nDAWControls.Tests.csproj
 ### Releases and NuGet
 
 Publishing a release on GitHub (for example with the tag `v1.0.0`) makes the workflow build and test everything,
-create the NuGet package with that version, and attach the package and the gallery to the release. The package is
-also published to nuget.org with [Trusted Publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing)
-once it is set up:
-
-1. On nuget.org, open your user name, then **Trusted Publishing**, and add a policy for GitHub Actions with
-   owner `duskozi`, repository `nDAWControls` and workflow file `build.yml`.
-2. In the GitHub repository, open **Settings > Secrets and variables > Actions > Variables** and add the variable
-   `NUGET_USER` with your nuget.org user name (not your email).
-
-To publish by hand:
-
-```
-dotnet pack src/nDAWControls -c Release -o pack
-dotnet nuget push pack/nDAWControls.1.0.0.nupkg --api-key <your key> --source https://api.nuget.org/v3/index.json
-```
+create the NuGet package with that version, attach the package and the gallery to the release, and publish the
+package to nuget.org.
 
 ## License
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 (2026-11-14)
+
+- The NuGet page shows a short readme for users of the package, without the build and release notes.
+
 ## 1.0.0 (2026-11-14)
 
 First release as nDAWControls, taken out of nMIDI Editor (where it was nMIDI.Controls 2.0) so other apps can use it.
