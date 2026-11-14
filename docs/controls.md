@@ -231,11 +231,11 @@ forward step).
 An LCD readout of a position in beats.
 
 ```xml
-<daw:TimeDisplay Position="{Binding PositionInBeats}" Tempo="120" Caption="BAR"/>
-<daw:TimeDisplay Position="{Binding PositionInBeats}" Tempo="120" Mode="Clock" Caption="TIME"/>
+<daw:TimeDisplay Position="{Binding PositionInBeats}" Tempo="120"/>
+<daw:TimeDisplay Position="{Binding PositionInBeats}" Tempo="120" Mode="Clock"/>
 ```
 
-`Mode` is `Musical` (bars:beats:ticks) or `Clock` (minutes:seconds). `TicksPerBeat` and `BeatsPerBar` set the
+`Mode` is `Musical` (bars:beats:ticks) or `Clock` (minutes:seconds); the small caption follows it and reads BAR or TIME. `TicksPerBeat` and `BeatsPerBar` set the
 musical format.
 
 ---

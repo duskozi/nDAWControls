@@ -140,8 +140,8 @@ public static class SnippetCatalog
             "An LCD readout of a position in beats, as bars:beats:ticks or as clock time.",
             """
             <StackPanel Orientation="Horizontal">
-                <daw:TimeDisplay Position="13.5" Tempo="120" Caption="BAR"/>
-                <daw:TimeDisplay Position="13.5" Tempo="120" Mode="Clock" Caption="TIME" Margin="8,0,0,0"/>
+                <daw:TimeDisplay Position="13.5" Tempo="120"/>
+                <daw:TimeDisplay Position="13.5" Tempo="120" Mode="Clock" Margin="8,0,0,0"/>
             </StackPanel>
             """),
 
