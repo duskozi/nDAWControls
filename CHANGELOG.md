@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2 (2026-11-14)
+
+- `PianoKeyboard` asks for a natural width (16 px per white key). In a StackPanel, an Auto column or a
+  left-aligned slot it used to get no width and did not show.
+- Gallery and docs: the `TimeDisplay` example no longer sets `Caption`, which is read-only and follows `Mode`.
+
 ## 1.0.1 (2026-11-14)
 
 - The NuGet page shows a short readme for users of the package, without the build and release notes.

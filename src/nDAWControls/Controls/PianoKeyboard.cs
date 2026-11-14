@@ -64,7 +64,7 @@ public class PianoKeyboard : DawRenderControl
     /// <summary>Identifies the <see cref="LowestNote"/> dependency property.</summary>
     public static readonly DependencyProperty LowestNoteProperty = DependencyProperty.Register(
         nameof(LowestNote), typeof(int), typeof(PianoKeyboard),
-        new FrameworkPropertyMetadata(36, FrameworkPropertyMetadataOptions.AffectsRender, OnRangeChanged), IsMidiNote);
+        new FrameworkPropertyMetadata(36, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure, OnRangeChanged), IsMidiNote);
 
     /// <summary>Lowest MIDI note shown (widened to a white key).</summary>
     public int LowestNote { get => (int)GetValue(LowestNoteProperty); set => SetValue(LowestNoteProperty, value); }
@@ -72,7 +72,7 @@ public class PianoKeyboard : DawRenderControl
     /// <summary>Identifies the <see cref="HighestNote"/> dependency property.</summary>
     public static readonly DependencyProperty HighestNoteProperty = DependencyProperty.Register(
         nameof(HighestNote), typeof(int), typeof(PianoKeyboard),
-        new FrameworkPropertyMetadata(96, FrameworkPropertyMetadataOptions.AffectsRender, OnRangeChanged), IsMidiNote);
+        new FrameworkPropertyMetadata(96, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure, OnRangeChanged), IsMidiNote);
 
     /// <summary>Highest MIDI note shown (widened to a white key).</summary>
     public int HighestNote { get => (int)GetValue(HighestNoteProperty); set => SetValue(HighestNoteProperty, value); }
@@ -288,6 +288,21 @@ public class PianoKeyboard : DawRenderControl
     #endregion
 
     #region Layout
+
+    /// <summary>Natural width of one white key, used when the keyboard is not stretched to a given width.</summary>
+    private const double NaturalWhiteKeyWidth = 16;
+
+    /// <inheritdoc/>
+    protected override Size MeasureOverride(Size constraint)
+    {
+        // Ask for a natural size (one white key = 16 px wide): in a StackPanel, an Auto column or a left-aligned
+        // slot the keyboard would otherwise get no width at all. Stretch alignment still fills the slot on arrange.
+        var (low, high) = EffectiveRange();
+        int whiteCount = 0;
+        for (int n = low; n <= high; n++)
+            if (!MidiNoteName.IsBlackKey(n)) whiteCount++;
+        return new Size(Math.Min(constraint.Width, whiteCount * NaturalWhiteKeyWidth), Math.Min(constraint.Height, 90));
+    }
 
     private (int low, int high) EffectiveRange()
     {

@@ -13,7 +13,7 @@
          processes; elsewhere the controls draw the same frames as vectors. -->
     <PlatformTarget>AnyCPU</PlatformTarget>
 
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Product>nDAWControls</Product>
     <Description>WPF controls for DAW and MIDI applications: knobs, faders, meters, channel strips, transport bar, piano keyboard, piano roll, controller lane, step sequencer, XY pad, envelope editor, wheels and pedals. Five built-in skins, switchable at runtime.</Description>
     <Authors>Duško Žigić</Authors>
