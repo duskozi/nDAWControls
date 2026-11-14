@@ -127,7 +127,6 @@ dotnet test tests/nDAWControls.Tests.csproj
 | `src/nDAWControls/Primitives` | Base classes, tapers, value formatters, `NineFrame` |
 | `src/nDAWControls/Rendering` | Nine-patch frames, note bitmaps, brush and text caches |
 | `src/nDAWControls/Models` | `MidiNote`, `ControllerPoint`, `StepPattern` and event arguments |
-| `lib/packages` | NinePatch.Core and NinePatchWpf packages, which render the nine-patch frames |
 | `samples` | The gallery and the MIDI player |
 | `tests` | Tests |
 
