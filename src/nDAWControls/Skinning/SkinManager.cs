@@ -45,7 +45,11 @@ public static class SkinManager
 
     /// <summary>Pack URI of a skin's resource dictionary.</summary>
     public static Uri GetSkinUri(DawSkin skin)
-        => new($"pack://application:,,,/nDAWControls;component/Skins/{skin}.xaml", UriKind.Absolute);
+    {
+        // Registers the pack:// scheme, which WPF otherwise does only once an Application exists.
+        _ = System.IO.Packaging.PackUriHelper.UriSchemePack;
+        return new($"pack://application:,,,/nDAWControls;component/Skins/{skin}.xaml", UriKind.Absolute);
+    }
 
     /// <summary>A new resource dictionary with the skin's resources.</summary>
     public static ResourceDictionary Load(DawSkin skin) => new() { Source = GetSkinUri(skin) };

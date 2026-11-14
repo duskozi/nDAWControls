@@ -43,8 +43,10 @@ public class RenderingTests
     [Fact]
     public void NativeRendererShipsWithTheLibrary()
     {
-        // The library project copies NinePatchLib.dll to every project that references it.
-        Assert.True(File.Exists(Path.Combine(AppContext.BaseDirectory, "NinePatchLib.dll")));
+        // The NinePatch.Core package brings NinePatchLib.dll to every project that references the library:
+        // next to the exe in a win-x64 build, or under runtimes/win-x64/native otherwise.
+        Assert.True(File.Exists(Path.Combine(AppContext.BaseDirectory, "NinePatchLib.dll"))
+                 || File.Exists(Path.Combine(AppContext.BaseDirectory, "runtimes", "win-x64", "native", "NinePatchLib.dll")));
         Assert.NotNull(NineSkins.TryGet(FrameSpec.Solid(Grey, Colors.Black, 3)));
         Assert.True(NineSkins.IsNativeAvailable);
     }
