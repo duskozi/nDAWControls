@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-windows;net10.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>nDAWControls</RootNamespace>
+    <AssemblyName>nDAWControls</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Any CPU. The nine-patch renderer (NinePatchLib.dll, from the NinePatch.Core package) is used in x64
+         processes; elsewhere the controls draw the same frames as vectors. -->
+    <PlatformTarget>AnyCPU</PlatformTarget>
+
+    <Version>1.0.0</Version>
+    <Product>nDAWControls</Product>
+    <Description>WPF controls for DAW and MIDI applications: knobs, faders, meters, channel strips, transport bar, piano keyboard, piano roll, controller lane, step sequencer, XY pad, envelope editor, wheels and pedals. Five built-in skins, switchable at runtime.</Description>
+    <Authors>Duško Žigić</Authors>
+    <Copyright>Copyright © 2026 Duško Žigić</Copyright>
+  </PropertyGroup>
+
+  <!-- NuGet package -->
+  <PropertyGroup>
+    <PackageId>nDAWControls</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/duskozi/nDAWControls</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/duskozi/nDAWControls</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>wpf;daw;midi;audio;music;controls;knob;fader;meter;mixer;piano;piano-roll;step-sequencer;skins</PackageTags>
+    <PackageReleaseNotes>See https://github.com/duskozi/nDAWControls/blob/main/CHANGELOG.md</PackageReleaseNotes>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" Visible="false" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" Visible="false" />
+    <None Include="..\..\docs\images\icon.png" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+
+  <!-- NinePatchWpf brings NinePatch.Core, which brings the native renderer (runtimes/win-x64/native). -->
+  <ItemGroup>
+    <PackageReference Include="NinePatchWpf" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="nDAWControls.Tests" />
+  </ItemGroup>
+
+</Project>

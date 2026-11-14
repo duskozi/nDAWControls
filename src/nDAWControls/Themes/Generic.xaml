@@ -1,0 +1,20 @@
+<!--
+  Theme entry point. Order matters: the default skin (Graphite) and icons come first so every
+  DynamicResource has a fallback even when the app never calls SkinManager.Apply.
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/nDAWControls;component/Skins/Graphite.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/Icons.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/Focus.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/Knob.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/Fader.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/Meters.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/Buttons.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/Displays.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/Editors.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/ChannelStrip.xaml"/>
+        <ResourceDictionary Source="/nDAWControls;component/Themes/Panels.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

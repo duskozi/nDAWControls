@@ -1,0 +1,75 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  release:
+    types: [ published ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write   # NuGet Trusted Publishing
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Build
+        run: dotnet build nDAWControls.sln -c Release
+
+      - name: Test
+        run: dotnet test tests/nDAWControls.Tests.csproj -c Release --no-build
+
+      - name: Version
+        id: version
+        shell: pwsh
+        run: |
+          $version = if ('${{ github.event_name }}' -eq 'release') { '${{ github.event.release.tag_name }}'.TrimStart('v', 'V') } else { '' }
+          "value=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Pack
+        shell: pwsh
+        run: |
+          $extra = if ('${{ steps.version.outputs.value }}') { "-p:Version=${{ steps.version.outputs.value }}" } else { '' }
+          dotnet pack src/nDAWControls/nDAWControls.csproj -c Release -o pack $extra
+
+      - name: Gallery
+        shell: pwsh
+        run: |
+          dotnet publish samples/Gallery/nDAWControls.Gallery.csproj -c Release -r win-x64 --self-contained false -o publish/nDAWControls.Gallery
+          Remove-Item publish/nDAWControls.Gallery/*.pdb -ErrorAction SilentlyContinue
+          $version = if ('${{ steps.version.outputs.value }}') { '${{ steps.version.outputs.value }}' } else { 'dev' }
+          Compress-Archive -Path publish/nDAWControls.Gallery -DestinationPath "pack/nDAWControls.Gallery-$version-win-x64.zip"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nDAWControls
+          path: pack/*
+
+      - name: Attach to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.release.tag_name }}
+          files: pack/*
+
+      # Publishing to nuget.org uses Trusted Publishing: add a trusted publishing policy for this repository and
+      # build.yml on nuget.org, and a repository variable NUGET_USER with your nuget.org user name.
+      - name: NuGet login
+        if: github.event_name == 'release' && vars.NUGET_USER != ''
+        id: nuget
+        uses: NuGet/login@v1
+        with:
+          user: ${{ vars.NUGET_USER }}
+
+      - name: Push to NuGet
+        if: github.event_name == 'release' && vars.NUGET_USER != ''
+        run: dotnet nuget push pack/*.nupkg --api-key ${{ steps.nuget.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

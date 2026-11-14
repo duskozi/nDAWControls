@@ -1,0 +1,8 @@
+<Application x:Class="nDAWControls.Gallery.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- Optional: SkinManager.Apply() inserts the active skin here. Without it the theme default (Graphite) is used. -->
+    </Application.Resources>
+</Application>

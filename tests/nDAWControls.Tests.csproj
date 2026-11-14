@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Tests for nDAWControls. They use WPF types, so they run on Windows: dotnet test tests
+       The parsing, formatting and taper tests (Logic/) need no WPF. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>nDAWControls.Tests</RootNamespace>
+    <AssemblyName>nDAWControls.Tests</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\nDAWControls\nDAWControls.csproj" />
+  </ItemGroup>
+
+  <!-- The skin files, read as XML by SkinTests. -->
+  <ItemGroup>
+    <None Include="..\src\nDAWControls\Skins\*.xaml" Link="Skins\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+
+</Project>

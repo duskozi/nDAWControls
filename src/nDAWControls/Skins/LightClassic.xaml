@@ -1,0 +1,115 @@
+<!-- LightClassic skin of nDAWControls. Light grey with a blue accent, like the Light classic theme of nMIDI Editor. -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    mc:Ignorable="po"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+                    xmlns:skin="clr-namespace:nDAWControls.Skinning">
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.WindowBackground}" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.PanelBackground}" Color="#FFECEEF1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.PanelRaised}" Color="#FFE1E4E8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.PanelBorder}" Color="#FFB7BDC6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.Text}" Color="#FF1D2128" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.TextDim}" Color="#FF525863" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.Accent}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.AccentForeground}" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.Focus}" Color="#991F6FD1" po:Freeze="True"/>
+    <RadialGradientBrush x:Key="{x:Static skin:DawSkinKeys.KnobBody}" GradientOrigin="0.35,0.3" Center="0.4,0.35" RadiusX="0.75" RadiusY="0.75" po:Freeze="True">
+        <GradientStop Offset="0" Color="#FFFFFFFF"/>
+        <GradientStop Offset="1" Color="#FFD3D7DD"/>
+    </RadialGradientBrush>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KnobBodyBorder}" Color="#FF868C96" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KnobTrack}" Color="#FFC3C8CF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KnobIndicator}" Color="#FF1D2128" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.FaderGroove}" Color="#FFB7BDC6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.FaderFill}" Color="#551F6FD1" po:Freeze="True"/>
+    <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.FaderThumb}" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
+        <GradientStop Offset="0" Color="#FFFFFFFF"/>
+        <GradientStop Offset="1" Color="#FFD3D7DD"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.FaderThumbBorder}" Color="#FF7E858F" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.FaderThumbLine}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.MeterBackground}" Color="#FFD3D7DD" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.MeterSafe}" Color="#FF1E9E4A" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.MeterWarning}" Color="#FFB98C00" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.MeterDanger}" Color="#FFD7263D" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.MeterPeakHold}" Color="#FF1D2128" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.MeterClipOn}" Color="#FFD7263D" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.MeterClipOff}" Color="#FFE9C9CD" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ScaleTick}" Color="#FF9DA4AE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ScaleText}" Color="#FF525863" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ButtonBackground}" Color="#FFF7F8FA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ButtonHover}" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ButtonPressed}" Color="#FFD3D7DD" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ButtonBorder}" Color="#FF9DA4AE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LedMute}" Color="#FFD9661F" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LedSolo}" Color="#FFB98C00" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LedArm}" Color="#FFD7263D" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LedMonitor}" Color="#FF6A4BCB" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LedLitForeground}" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.TransportPlay}" Color="#FF1E9E4A" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.TransportRecord}" Color="#FFD7263D" po:Freeze="True"/>
+    <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.LcdBackground}" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
+        <GradientStop Offset="0" Color="#FFD9E2C9"/>
+        <GradientStop Offset="1" Color="#FFC9D4B6"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdBorder}" Color="#FF7E858F" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdText}" Color="#FF1E2A17" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdTextDim}" Color="#FF7A8A6A" po:Freeze="True"/>
+    <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.KeyWhite}" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
+        <GradientStop Offset="0" Color="#FFFFFFFF"/>
+        <GradientStop Offset="1" Color="#FFE4E7EB"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.KeyBlack}" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
+        <GradientStop Offset="0" Color="#FF3A3F48"/>
+        <GradientStop Offset="1" Color="#FF1D2128"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KeyBorder}" Color="#FF868C96" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KeyPressed}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KeyHighlight}" Color="#B01A87D6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.GridBackground}" Color="#FFF4F5F7" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.GridBlackRow}" Color="#FFE4E7EB" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.GridBarLine}" Color="#FFA2A8B2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.GridBeatLine}" Color="#FFC9CDD4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.GridSubLine}" Color="#FFDDE0E5" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.NoteFill}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.NoteSelectedFill}" Color="#FF0F4FA8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.NoteBorder}" Color="#C0000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.NoteText}" Color="#CCFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.Playhead}" Color="#FFE5383B" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.RulerBackground}" Color="#FFE9ECEF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.RulerText}" Color="#FF2E333B" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.Selection}" Color="#331A87D6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.StepOff}" Color="#FFD3D7DD" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.StepOn}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.StepGroupBackground}" Color="#FFE1E4E8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.StepPlayhead}" Color="#221D2128" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.PadBackground}" Color="#FFF7F8FA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.PadGrid}" Color="#FFD5D9DF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.PadPuck}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.PadCrosshair}" Color="#661F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.EnvelopeStroke}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.EnvelopeFill}" Color="#331F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.WheelSlot}" Color="#FFB7BDC6" po:Freeze="True"/>
+    <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.WheelBody}" StartPoint="0,0" EndPoint="1,0" po:Freeze="True">
+        <GradientStop Offset="0" Color="#FFD3D7DD"/>
+        <GradientStop Offset="0.45" Color="#FFFFFFFF"/>
+        <GradientStop Offset="1" Color="#FFD3D7DD"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.WheelRib}" Color="#FF9DA4AE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.WheelMarker}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.PedalBody}" Color="#FFC3C8CF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.PedalLit}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ActivityNote}" Color="#FF1E9E4A" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ActivityControl}" Color="#FF1A87D6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ActivityOff}" Color="#FFD3D7DD" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.ActivityRowAlt}" Color="#FFE4E7EB" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.TrackSelected}" Color="#FFD7E6FA" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LaneValue}" Color="#FF1F6FD1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LaneFill}" Color="#331F6FD1" po:Freeze="True"/>
+    <CornerRadius x:Key="{x:Static skin:DawSkinKeys.CornerRadius}">3</CornerRadius>
+    <FontFamily x:Key="{x:Static skin:DawSkinKeys.FontFamily}">Segoe UI</FontFamily>
+    <FontFamily x:Key="{x:Static skin:DawSkinKeys.LcdFontFamily}">Consolas</FontFamily>
+    <sys:Double x:Key="{x:Static skin:DawSkinKeys.KnobArcThickness}">3.5</sys:Double>
+</ResourceDictionary>

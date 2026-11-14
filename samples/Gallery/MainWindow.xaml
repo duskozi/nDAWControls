@@ -1,0 +1,315 @@
+<Window x:Class="nDAWControls.Gallery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:daw="urn:ndaw-controls"
+        Title="nDAWControls gallery" Width="1480" Height="900" MinWidth="1100" MinHeight="700"
+        Background="{DynamicResource {x:Static daw:DawSkinKeys.WindowBackground}}"
+        TextElement.Foreground="{DynamicResource {x:Static daw:DawSkinKeys.Text}}"
+        TextElement.FontFamily="{DynamicResource {x:Static daw:DawSkinKeys.FontFamily}}"
+        UseLayoutRounding="True">
+
+    <Window.Resources>
+        <!-- Section caption style that follows the skin. -->
+        <Style x:Key="Caption" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,0,0,6"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static daw:DawSkinKeys.TextDim}}"/>
+        </Style>
+        <Style x:Key="Panel" TargetType="Border">
+            <Setter Property="Background" Value="{DynamicResource {x:Static daw:DawSkinKeys.PanelBackground}}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static daw:DawSkinKeys.PanelBorder}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="{DynamicResource {x:Static daw:DawSkinKeys.CornerRadius}}"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+        <!-- Code boxes of the control catalog. -->
+        <Style x:Key="Code" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Cascadia Mono, Consolas"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="AcceptsTab" Value="True"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static daw:DawSkinKeys.PanelBackground}}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static daw:DawSkinKeys.Text}}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static daw:DawSkinKeys.PanelBorder}}"/>
+            <Setter Property="CaretBrush" Value="{DynamicResource {x:Static daw:DawSkinKeys.Accent}}"/>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel>
+        <!-- Gallery header: view switch and skin picker -->
+        <Border DockPanel.Dock="Top" Padding="12,8" BorderThickness="0,0,0,1"
+                Background="{DynamicResource {x:Static daw:DawSkinKeys.PanelBackground}}"
+                BorderBrush="{DynamicResource {x:Static daw:DawSkinKeys.PanelBorder}}">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" FontSize="16" Margin="0,0,20,0">
+                    <Run Text="nDAW" FontWeight="Bold" Foreground="{DynamicResource {x:Static daw:DawSkinKeys.Accent}}"/><Run Text="Controls" FontWeight="SemiBold"/><Run Text="  gallery" FontSize="12" Foreground="{DynamicResource {x:Static daw:DawSkinKeys.TextDim}}"/>
+                </TextBlock>
+                <daw:LedToggleButton x:Name="ShowCatalog" DockPanel.Dock="Left" Content="CONTROLS" Height="26" Padding="10,0"
+                                     IsChecked="True" Click="OnViewClick"/>
+                <daw:LedToggleButton x:Name="ShowDemo" DockPanel.Dock="Left" Content="STUDIO DEMO" Height="26" Padding="10,0" Margin="4,0,0,0"
+                                     Click="OnViewClick"/>
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="SKIN" Style="{StaticResource Caption}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox x:Name="SkinPicker" Width="150" SelectionChanged="OnSkinChanged"/>
+                </StackPanel>
+                <Border/>
+            </DockPanel>
+        </Border>
+
+        <Grid>
+        <!-- Control catalog: every control with its XAML, shown live -->
+        <Grid x:Name="CatalogView" Margin="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Style="{StaticResource Panel}" Padding="0">
+                <ListBox x:Name="SnippetList" BorderThickness="0" Background="Transparent" SelectionChanged="OnSnippetSelected"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" Style="{StaticResource Caption}" Margin="12,12,0,4"/>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListBox.GroupStyle>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static daw:DawSkinKeys.Text}}"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Border x:Name="Bd" Padding="16,5" Background="Transparent">
+                                            <ContentPresenter/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static daw:DawSkinKeys.ButtonHover}}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static daw:DawSkinKeys.Accent}}"/>
+                                                <Setter Property="Foreground" Value="{DynamicResource {x:Static daw:DawSkinKeys.AccentForeground}}"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+            </Border>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="8"/>
+                    <RowDefinition Height="250"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Margin="4,0,0,10">
+                    <TextBlock x:Name="SnippetTitle" FontSize="20" FontWeight="SemiBold"/>
+                    <TextBlock x:Name="SnippetDescription" TextWrapping="Wrap" Margin="0,4,0,0"
+                               Foreground="{DynamicResource {x:Static daw:DawSkinKeys.TextDim}}"/>
+                </StackPanel>
+
+                <!-- Live preview of the XAML below -->
+                <Border Grid.Row="1" Style="{StaticResource Panel}" Padding="0">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <ContentControl x:Name="Preview" Margin="24" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </ScrollViewer>
+                </Border>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top" Margin="0,0,0,4">
+                            <TextBlock Text="XAML  (xmlns:daw=&quot;urn:ndaw-controls&quot;)" Style="{StaticResource Caption}"
+                                       VerticalAlignment="Center" Margin="0"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <TextBlock x:Name="XamlError" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="11"
+                                           Foreground="{DynamicResource {x:Static daw:DawSkinKeys.MeterDanger}}"/>
+                                <daw:LedToggleButton Content="APPLY" Height="22" Padding="8,0" Click="OnApplyXaml"
+                                                     ToolTip="Show your edited XAML in the preview (Ctrl+Enter)"/>
+                                <daw:LedToggleButton Content="COPY" Height="22" Padding="8,0" Margin="4,0,0,0" Click="OnCopyXaml"/>
+                            </StackPanel>
+                        </DockPanel>
+                        <TextBox x:Name="XamlCode" Style="{StaticResource Code}" PreviewKeyDown="OnXamlKeyDown"/>
+                    </DockPanel>
+                    <DockPanel Grid.Column="2">
+                        <DockPanel DockPanel.Dock="Top" Margin="0,0,0,4">
+                            <TextBlock Text="C#" Style="{StaticResource Caption}" VerticalAlignment="Center" Margin="0"/>
+                            <daw:LedToggleButton Content="COPY" Height="22" Padding="8,0" HorizontalAlignment="Right" Click="OnCopyCSharp"/>
+                        </DockPanel>
+                        <TextBox x:Name="CSharpCode" Style="{StaticResource Code}" IsReadOnly="True"/>
+                    </DockPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- Studio demo: the controls working together -->
+        <DockPanel x:Name="DemoView" Visibility="Collapsed">
+        <!-- Transport -->
+        <daw:TransportBar x:Name="Transport" DockPanel.Dock="Top" Tempo="124" IsLooping="True"/>
+
+        <Border DockPanel.Dock="Top" Padding="10,6" BorderThickness="0,0,0,1"
+                Background="{DynamicResource {x:Static daw:DawSkinKeys.PanelRaised}}"
+                BorderBrush="{DynamicResource {x:Static daw:DawSkinKeys.PanelBorder}}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="MIDI IN" VerticalAlignment="Center" Style="{StaticResource Caption}" Margin="0,0,8,0"/>
+                <daw:MidiActivityMonitor x:Name="ChannelLeds" Layout="Compact" Width="240" Height="20" VerticalAlignment="Center"
+                                         ToolTip="16 MIDI channels · top = notes, bottom = controllers"/>
+                <TextBlock x:Name="Status" Margin="24,0,0,0" VerticalAlignment="Center"
+                           Foreground="{DynamicResource {x:Static daw:DawSkinKeys.TextDim}}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Keyboard -->
+        <Border DockPanel.Dock="Bottom" Style="{StaticResource Panel}" Margin="8,0,8,8" Padding="6">
+            <DockPanel Height="96">
+                <!-- Wheels on top, pedals tucked underneath: the pedals cost no extra height. -->
+                <DockPanel DockPanel.Dock="Left" Margin="2,0,10,0">
+                    <daw:PianoPedals x:Name="Pedals" DockPanel.Dock="Bottom" Margin="0,5,0,0" PedalChanged="OnPedalChanged"/>
+                    <StackPanel Orientation="Horizontal">
+                        <daw:PerformanceWheel x:Name="PitchWheel" Mode="PitchBend" Margin="0,0,6,0"
+                                              ValueChanged="OnWheelChanged" ToolTip="Pitch bend · springs back · double-click = centre"/>
+                        <daw:PerformanceWheel x:Name="ModWheel" Mode="Modulation"
+                                              ValueChanged="OnWheelChanged" ToolTip="Modulation (CC 1)"/>
+                    </StackPanel>
+                </DockPanel>
+                <daw:PianoKeyboard x:Name="Keys" Height="96" LowestNote="36" HighestNote="96"
+                                   NoteOn="OnKeyboardNoteOn" NoteOff="OnKeyboardNoteOff"
+                                   ToolTip="Click lower on a key = harder hit · or focus and use A W S E D F T G… · Z/X = octave"/>
+            </DockPanel>
+        </Border>
+
+        <!-- Mixer -->
+        <Border DockPanel.Dock="Left" Style="{StaticResource Panel}" Margin="8,8,0,8">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Top" Text="MIXER" Style="{StaticResource Caption}"/>
+                <StackPanel DockPanel.Dock="Bottom" Margin="0,10,0,0">
+                    <TextBlock Text="MIDI CHANNELS" Style="{StaticResource Caption}"/>
+                    <daw:MidiActivityMonitor x:Name="ChannelMonitor" Source="Channels" RowHeight="12"
+                                             LowestNote="24" HighestNote="96"/>
+                </StackPanel>
+                <StackPanel x:Name="Mixer" Orientation="Horizontal">
+                    <daw:ChannelStrip x:Name="StripKick" TrackName="Kick" TrackColor="#FFFF6B5A" Margin="0,0,4,0"/>
+                    <daw:ChannelStrip x:Name="StripSnare" TrackName="Snare" TrackColor="#FFFFC24A" Margin="0,0,4,0" Volume="-3"/>
+                    <daw:ChannelStrip x:Name="StripHats" TrackName="Hats" TrackColor="#FF5AD1A0" Margin="0,0,4,0" Volume="-9" Pan="0.3"/>
+                    <daw:ChannelStrip x:Name="StripSynth" TrackName="Synth" TrackColor="#FF6FA8FF" Margin="0,0,10,0" Volume="-6" IsArmed="True"/>
+                    <daw:ChannelStrip x:Name="StripMaster" TrackName="Master" ShowArmButton="False"
+                                      TrackColor="{DynamicResource {x:Static daw:DawSkinKeys.Accent}}"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <!-- Instrument panel -->
+        <Border x:Name="InstrumentPanel" DockPanel.Dock="Right" Width="330" Style="{StaticResource Panel}" Margin="0,8,8,8">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="SYNTH" Style="{StaticResource Caption}"/>
+                    <daw:MidiActivityMonitor x:Name="SynthLed" Layout="Compact" LaneCount="1" Width="12" Height="12"
+                                             Margin="6,0,0,6" VerticalAlignment="Center" ToolTip="Synth track MIDI activity"/>
+                </StackPanel>
+                <WrapPanel>
+                    <daw:Knob Label="Cutoff" Taper="Log" Minimum="20" Maximum="20000" DefaultValue="1200" Value="1200"
+                              ValueFormatter="{x:Static daw:ValueFormatters.Frequency}"/>
+                    <daw:Knob Label="Reso" DefaultValue="0.2" Value="0.35" ValueFormatter="{x:Static daw:ValueFormatters.Percent}"/>
+                    <daw:Knob Label="Drive" Minimum="0" Maximum="24" Value="6" ValueStringFormat="{}{0:0.0} dB"/>
+                    <daw:Knob Label="Detune" IsBipolar="True" Minimum="-50" Maximum="50" Step="1" Value="7"
+                              ValueStringFormat="{}{0:+0;-0;0} ct"/>
+                    <daw:Knob Label="Mix" Value="0.8" ArcBrush="#FFB18CFF" ValueFormatter="{x:Static daw:ValueFormatters.Percent}"/>
+                    <daw:Knob Label="Small" Width="36" Height="48" Value="0.5"/>
+                </WrapPanel>
+
+                <TextBlock Text="FILTER XY" Style="{StaticResource Caption}" Margin="0,12,0,6"/>
+                <daw:XYPad Height="130" XLabel="cutoff" YLabel="resonance" XValue="0.6" YValue="0.35"/>
+
+                <TextBlock Text="AMP ENVELOPE" Style="{StaticResource Caption}" Margin="0,12,0,6"/>
+                <daw:EnvelopeEditor Height="120" Attack="0.02" Decay="0.4" Sustain="0.65" Release="0.9"/>
+
+                <TextBlock Text="MISC" Style="{StaticResource Caption}" Margin="0,12,0,6"/>
+                <daw:Fader Orientation="Horizontal" Label="Glide" Height="22" Value="0.25"
+                           ValueFormatter="{x:Static daw:ValueFormatters.Percent}"/>
+                <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                    <daw:ValueBox Label="TRANSPOSE" Minimum="-24" Maximum="24" Step="1" Value="0" Width="86"
+                                  ValueStringFormat="{}{0:+0;-0;0}" Unit="st"/>
+                    <daw:ValueBox Label="VOICES" Minimum="1" Maximum="16" Step="1" Value="8" Width="70" Margin="6,0,0,0"
+                                  ValueFormatter="{x:Static daw:ValueFormatters.Integer}"/>
+                    <daw:LedToggleButton Content="MONO" Margin="10,0,0,0" Height="24"/>
+                    <daw:LedToggleButton Content="LEGATO" Role="Monitor" Margin="4,0,0,0" Height="24" IsChecked="True"/>
+                </StackPanel>
+
+                <TextBlock Text="TRACK ACTIVITY" Style="{StaticResource Caption}" Margin="0,12,0,6"/>
+                <daw:MidiActivityMonitor x:Name="TrackMonitor" Source="Tracks" LaneCount="4" RowHeight="15"
+                                         LowestNote="24" HighestNote="96"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Editors -->
+        <Grid Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="8"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Style="{StaticResource Panel}" Padding="0">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top" Padding="10,6"
+                            BorderBrush="{DynamicResource {x:Static daw:DawSkinKeys.PanelBorder}}" BorderThickness="0,0,0,1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="PIANO ROLL" Style="{StaticResource Caption}" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="Snap" VerticalAlignment="Center" Margin="0,0,6,0" FontSize="11"
+                                       Foreground="{DynamicResource {x:Static daw:DawSkinKeys.TextDim}}"/>
+                            <ComboBox x:Name="SnapPicker" Width="80" SelectionChanged="OnSnapChanged"/>
+                            <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" FontSize="10"
+                                       Foreground="{DynamicResource {x:Static daw:DawSkinKeys.TextDim}}"
+                                       Text="click = add · drag = move · edge = resize · right-click = delete · Ctrl+wheel = zoom · Ctrl+D = duplicate"/>
+                        </StackPanel>
+                    </Border>
+                    <!-- Controller lane: follows the roll's scroll, zoom, snap and playhead. -->
+                    <DockPanel DockPanel.Dock="Bottom">
+                        <Border DockPanel.Dock="Top" Padding="10,4"
+                                BorderBrush="{DynamicResource {x:Static daw:DawSkinKeys.PanelBorder}}" BorderThickness="0,1,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="LANE" Style="{StaticResource Caption}" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                <ComboBox x:Name="LanePicker" Width="130" SelectionChanged="OnLaneModeChanged"/>
+                                <TextBlock Margin="12,0,0,0" VerticalAlignment="Center" FontSize="10"
+                                           Foreground="{DynamicResource {x:Static daw:DawSkinKeys.TextDim}}"
+                                           Text="drag = draw · right-drag = erase · Shift = line · Record + Play writes wheel moves"/>
+                            </StackPanel>
+                        </Border>
+                        <daw:ControllerLane x:Name="Lane" Height="110" Roll="{Binding ElementName=Roll}" LaneEdited="OnLaneEdited"/>
+                    </DockPanel>
+                    <ScrollViewer CanContentScroll="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <daw:PianoRoll x:Name="Roll" LengthInBeats="32" FollowPlayhead="True"
+                                       AuditionNoteOn="OnAuditionOn" AuditionNoteOff="OnAuditionOff" NotesEdited="OnNotesEdited"/>
+                    </ScrollViewer>
+                </DockPanel>
+            </Border>
+
+            <Border Grid.Row="2" Style="{StaticResource Panel}">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="STEP SEQUENCER" Style="{StaticResource Caption}"/>
+                    <daw:StepSequencer x:Name="Steps" Height="120"/>
+                </DockPanel>
+            </Border>
+        </Grid>
+        </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>
