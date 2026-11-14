@@ -130,11 +130,7 @@ dotnet test tests/nDAWControls.Tests.csproj
 | `samples` | The gallery and the MIDI player |
 | `tests` | Tests |
 
-### Releases and NuGet
 
-Publishing a release on GitHub (for example with the tag `v1.0.0`) makes the workflow build and test everything,
-create the NuGet package with that version, attach the package and the gallery to the release, and publish the
-package to nuget.org.
 
 ## License
 
