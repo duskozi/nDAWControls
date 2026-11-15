@@ -45,6 +45,13 @@ public partial class MainWindow
         DemoView.Visibility = catalog ? Visibility.Collapsed : Visibility.Visible;
     }
 
+    /// <summary>Switches to the studio demo, optionally starting the song (used by the screenshot mode).</summary>
+    internal void ShowStudioDemo(bool play)
+    {
+        OnViewClick(ShowDemo, new RoutedEventArgs());
+        if (play) Transport.IsPlaying = true;
+    }
+
     private void OnSnippetSelected(object sender, SelectionChangedEventArgs e)
     {
         if (SnippetList.SelectedItem is not Snippet snippet) return;

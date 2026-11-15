@@ -1,0 +1,37 @@
+name: Screenshots
+
+# Renders every gallery catalog entry and both gallery views in every skin (images for the website).
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'samples/Gallery/**'
+      - 'src/nDAWControls/**'
+      - '.github/workflows/screenshots.yml'
+
+jobs:
+  screenshots:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Build the gallery
+        run: dotnet publish samples/Gallery/nDAWControls.Gallery.csproj -c Release -r win-x64 --self-contained false -o gallery
+
+      - name: Render
+        shell: pwsh
+        run: |
+          $p = Start-Process -FilePath gallery/nDAWControls.Gallery.exe -ArgumentList '--screenshots', "$PWD/screenshots" -Wait -PassThru
+          Get-Content screenshots/log.txt
+          if ($p.ExitCode -ne 0) { exit $p.ExitCode }
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screenshots
+          path: screenshots
