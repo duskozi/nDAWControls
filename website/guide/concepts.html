@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core concepts · nDAWControls</title>
+<meta name="description" content="Value controls, tapers, value text, colours, models and drawing in nDAWControls.">
+<meta property="og:title" content="Core concepts · nDAWControls">
+<meta property="og:description" content="Value controls, tapers, value text, colours, models and drawing in nDAWControls.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html">Getting started</a></li><li><a href="../guide/concepts.html" aria-current="page">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html">MVVM and binding</a></li><li><a href="../guide/skins.html">Skins</a></li><li><a href="../guide/recipes.html">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs">Guide</div><h1>Core concepts</h1><p class="lede">The ideas that are the same in every control: value controls, tapers, value text, colours, models and drawing.</p></div><section><h2 id="value-controls"><a class="anchor" href="#value-controls">#</a>Value controls</h2>
+<p><code>Knob</code>, <code>Fader</code> and <code>ValueBox</code> derive from <code>DawRangeControl</code>, which derives from WPF&#x27;s <code>RangeBase</code>. So <code>Minimum</code>, <code>Maximum</code>, <code>Value</code>, <code>SmallChange</code>, <code>LargeChange</code> and the <code>ValueChanged</code> event work exactly as in a <code>Slider</code>. On top of that they share these properties:</p><div class="table-wrap"><table><thead><tr><th>Property</th><th>What it does</th></tr></thead><tbody>
+      <tr><td><code>DefaultValue</code></td><td>Value after a double-click, Ctrl+click or the Delete key. Also where a bipolar knob's ring starts.</td></tr>
+      <tr><td><code>Taper</code></td><td>The curve between the value and the control position: <code>Linear</code>, <code>Log</code> or <code>Decibel</code>.</td></tr>
+      <tr><td><code>Step</code></td><td>Snaps user changes to multiples, for example <code>1</code> for whole numbers. 0 = continuous.</td></tr>
+      <tr><td><code>Label</code></td><td>The parameter name shown with the control.</td></tr>
+      <tr><td><code>ValueFormatter</code></td><td>A <code>Func&lt;double, string&gt;</code> that makes the value text.</td></tr>
+      <tr><td><code>ValueStringFormat</code></td><td>Or a composite format string, for example <code>{}{0:0.0} dB</code>.</td></tr>
+      <tr><td><code>MinimumText</code></td><td>Text shown at the minimum, for example <code>-∞</code> or <code>Off</code>.</td></tr>
+      <tr><td><code>DragSensitivity</code></td><td>Pixels of mouse travel for the full range (200 by default).</td></tr>
+      <tr><td><code>FineFactor</code></td><td>Speed while Shift is held (0.1 by default).</td></tr>
+      <tr><td><code>IsDragging</code></td><td>True while the user holds the control (read-only).</td></tr>
+      </tbody></table></div><p>Two routed events, <code>DragStarted</code> and <code>DragCompleted</code>, mark the start and end of a mouse gesture. Use them for automation &quot;touch&quot; and to make one drag one undo step. <code>ResetToDefault()</code> and <code>SetNormalizedValue(0..1)</code> are handy from code.</p><h3 id="tapers"><a class="anchor" href="#tapers">#</a>Tapers</h3><p>The taper decides how the position of a knob or fader maps to its value. In XAML you write the name; in code use <code>ValueTaper.Linear</code>, <code>ValueTaper.Logarithmic</code> or <code>ValueTaper.Decibel</code>.</p><div class="table-wrap"><table><thead><tr><th>XAML</th><th>Use for</th><th>Behaviour</th></tr></thead><tbody>
+      <tr><td><code>Linear</code></td><td>Most parameters, pan, mix</td><td>Equal travel, equal change</td></tr>
+      <tr><td><code>Log</code></td><td>Frequencies, times</td><td>Every octave gets the same travel. Needs a positive minimum.</td></tr>
+      <tr><td><code>Decibel</code></td><td>Volume faders</td><td>The mixer curve: room around 0 dB, the bottom compressed to -∞</td></tr>
+      </tbody></table></div><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:Knob  Label=&quot;Freq&quot;  Taper=&quot;Log&quot;     Minimum=&quot;20&quot;  Maximum=&quot;20000&quot;/&gt;
+&lt;daw:Fader Height=&quot;200&quot;  Taper=&quot;Decibel&quot; Minimum=&quot;-60&quot; Maximum=&quot;6&quot;/&gt;</code></pre></div><p>You can also write your own: derive from <code>ValueTaper</code> and implement the mapping between value and a normalized 0..1 position.</p><h3 id="value-text"><a class="anchor" href="#value-text">#</a>Value text</h3><p>The text under a knob or fader comes from <code>ValueFormatter</code> if set, else from <code>ValueStringFormat</code>, and <code>MinimumText</code> wins at the minimum. <code>ValueFormatters</code> has ready-made formatters for XAML:</p><div class="table-wrap"><table><thead><tr><th>Formatter</th><th>Example output</th></tr></thead><tbody>
+      <tr><td><code>ValueFormatters.Decibel</code></td><td>-6.0 dB, -∞</td></tr>
+      <tr><td><code>ValueFormatters.Pan</code></td><td>L30, C, R100</td></tr>
+      <tr><td><code>ValueFormatters.Percent</code></td><td>80%</td></tr>
+      <tr><td><code>ValueFormatters.Frequency</code></td><td>440 Hz, 1.2 kHz</td></tr>
+      <tr><td><code>ValueFormatters.Time</code></td><td>20 ms, 1.5 s</td></tr>
+      <tr><td><code>ValueFormatters.Tempo</code></td><td>120.0 BPM</td></tr>
+      <tr><td><code>ValueFormatters.Integer</code></td><td>12</td></tr>
+      </tbody></table></div><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:Knob Label=&quot;Cutoff&quot; ValueFormatter=&quot;{x:Static daw:ValueFormatters.Frequency}&quot;/&gt;</code></pre></div><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">knob.ValueFormatter = v =&gt; v &lt; 0.5 ? &quot;Soft&quot; : &quot;Hard&quot;;</code></pre></div>
+</section>
+<section><h2 id="colours-and-brushes"><a class="anchor" href="#colours-and-brushes">#</a>Colours and brushes</h2>
+<p>The controls are lookless: every colour is a brush property, and the default style sets it from the active skin with <code>DynamicResource</code>. That gives you three levels of control:</p>
+<ol><li><strong>Switch the skin</strong> to change everything (<a href="../guide/skins.html">Skins</a>).</li><li><strong>Override a skin key</strong> in your own resources to change one colour everywhere, for example the accent.</li><li><strong>Set a brush property</strong> on one control to change only that control, for example <code>ArcBrush</code> on one knob or <code>TrackColor</code> on a channel strip.</li></ol><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;!-- only this knob is purple --&gt;
+&lt;daw:Knob Label=&quot;Mix&quot; ArcBrush=&quot;#FFB18CFF&quot;/&gt;
+
+&lt;!-- every LED meter in this panel switches to orange earlier --&gt;
+&lt;daw:LevelMeter WarningDb=&quot;-18&quot; DangerDb=&quot;-6&quot; WarningBrush=&quot;Orange&quot;/&gt;</code></pre></div><p>Each control page lists its colour properties under <strong>API reference</strong>.</p>
+</section>
+<section><h2 id="models"><a class="anchor" href="#models">#</a>Models</h2>
+<p>The note editors work on small model classes from <code>nDAWControls.Models</code>. All of them use beats (quarter notes) for time, so they are independent of tempo and PPQ.</p><div class="table-wrap"><table><thead><tr><th>Class</th><th>Used by</th><th>What it holds</th></tr></thead><tbody>
+      <tr><td><code>MidiNote</code></td><td>PianoRoll, ControllerLane (velocity)</td><td><code>Pitch</code> (0..127), <code>Start</code> and <code>Length</code> in beats, <code>Velocity</code> (1..127), <code>IsSelected</code>, optional <code>Brush</code>. Implements <code>INotifyPropertyChanged</code>.</td></tr>
+      <tr><td><code>ControllerPoint</code></td><td>ControllerLane</td><td><code>Position</code> in beats and <code>Value</code> (0..127, or -8192..8191 for pitch bend).</td></tr>
+      <tr><td><code>StepPattern</code></td><td>StepSequencer</td><td>A rows × steps grid of velocities (0 = off) with <code>GetVelocity</code>, <code>SetVelocity</code>, <code>IsOn</code>, <code>Clear</code> and a <code>StepChanged</code> event.</td></tr>
+      <tr><td><code>KeyHighlight</code></td><td>PianoKeyboard.SetState</td><td>A lit key: note, colour, intensity, and optional hand and finger.</td></tr>
+      </tbody></table></div><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">using nDAWControls.Models;
+
+var notes = new ObservableCollection&lt;MidiNote&gt;
+{
+    new(pitch: 60, start: 0, length: 1, velocity: 100),
+    new(64, 1, 1),
+};
+var points  = new ObservableCollection&lt;ControllerPoint&gt; { new(0, 0), new(4, 127) };
+var pattern = new StepPattern(rows: 4, steps: 16);</code></pre></div><p>Converting from MIDI ticks: <code>beats = ticks / (double)ticksPerQuarterNote</code>.</p>
+</section>
+<section><h2 id="focus-and-keyboard"><a class="anchor" href="#focus-and-keyboard">#</a>Focus and keyboard</h2>
+<p>Every interactive control can take keyboard focus and shows the skin&#x27;s focus outline. Knobs, faders and value boxes use the arrow keys, Page Up/Down and Home/End; the piano roll, step sequencer and keyboard have their own keys, listed on their pages. Use <code>IsTabStop</code> and <code>TabIndex</code> as with any WPF control.</p>
+</section>
+<section><h2 id="drawing-and-performance"><a class="anchor" href="#drawing-and-performance">#</a>Drawing and performance</h2>
+<p>Frames, LEDs, caps and note bodies are drawn by a native nine-patch renderer (<code>NinePatchLib.dll</code>, from the NinePatch.Core package) at the exact device-pixel size, and cached. A hundred equal buttons share one bitmap. The cache follows the skin and the DPI, so a skin change or a move to another monitor redraws everything sharply.</p>
+<p>Without the native renderer (32-bit or ARM64 processes, or a PC without the Visual C++ runtime) the controls draw the same frames as vectors. Nothing breaks, it is only a little slower.</p>
+<p>Big controls only draw what is visible: the piano roll draws the visible notes, and meters and activity lights draw at most once per frame. Collapsed controls (for example in a hidden <code>DawPanel</code>) draw nothing at all.</p><div class="callout"><span class="ci">i</span><div>For the fastest drawing, build your app for x64 (<code>&lt;PlatformTarget&gt;x64&lt;/PlatformTarget&gt;</code> or <code>&lt;RuntimeIdentifier&gt;win-x64&lt;/RuntimeIdentifier&gt;</code>).</div></div>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#value-controls">Value controls</a></li><li class="l3"><a href="#tapers">Tapers</a></li><li class="l3"><a href="#value-text">Value text</a></li><li class="l2"><a href="#colours-and-brushes">Colours and brushes</a></li><li class="l2"><a href="#models">Models</a></li><li class="l2"><a href="#focus-and-keyboard">Focus and keyboard</a></li><li class="l2"><a href="#drawing-and-performance">Drawing and performance</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

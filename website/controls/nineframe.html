@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NineFrame · nDAWControls</title>
+<meta name="description" content="NineFrame: A drop-in replacement for Border with bevels, drawn by the same renderer as the controls. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:title" content="NineFrame · nDAWControls">
+<meta property="og:description" content="NineFrame: A drop-in replacement for Border with bevels, drawn by the same renderer as the controls. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html">Getting started</a></li><li><a href="../guide/concepts.html">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html">MVVM and binding</a></li><li><a href="../guide/skins.html">Skins</a></li><li><a href="../guide/recipes.html">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html" aria-current="page">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs"><a href="../controls/index.html">Controls</a> / Mixer and layout</div><h1>NineFrame</h1><p class="lede">A drop-in replacement for Border with bevels, drawn by the same renderer as the controls.</p><div class="head-row"><code class="cls">&lt;daw:NineFrame&gt;</code><div class="skin-tabs" role="group" aria-label="Skin of the screenshots"><span>Skin</span><button type="button" class="skin-dot" data-skin="graphite" title="Graphite" aria-label="Graphite skin" style="--dot:#ff8a2a"></button><button type="button" class="skin-dot" data-skin="studio" title="Studio" aria-label="Studio skin" style="--dot:#4ea1ff"></button><button type="button" class="skin-dot" data-skin="lightclassic" title="Light classic" aria-label="Light classic skin" style="--dot:#2f7de1"></button><button type="button" class="skin-dot" data-skin="retrohardware" title="Retro hardware" aria-label="Retro hardware skin" style="--dot:#ff9a3c"></button><button type="button" class="skin-dot" data-skin="highcontrast" title="High contrast" aria-label="High contrast skin" style="--dot:#ffd400"></button><span class="skin-name">Graphite</span></div></div></div><section><h2 id="overview"><a class="anchor" href="#overview">#</a>Overview</h2>
+<p><code>NineFrame</code> has the properties of <code>Border</code> (<code>Background</code>, <code>BorderBrush</code>, <code>BorderThickness</code>, <code>CornerRadius</code>, <code>Padding</code>) plus <code>Bevel</code>: <code>Flat</code>, <code>Raised</code>, <code>Sunken</code> or <code>Glow</code>. It draws with the native nine-patch renderer, so your own panels, displays and buttons match the controls exactly, and equal frames share one cached bitmap.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/nineframe.png" data-shot="nineframe" width="306" height="82" alt="A sunken LCD, a raised panel and a glowing frame." decoding="async"></div><figcaption>A sunken LCD, a raised panel and a glowing frame.</figcaption></figure><div class="usefor"><h4>Use it for</h4><ul><li>your own LCD displays, panels, cards and button templates that should look like the built-in controls</li></ul></div>
+</section>
+<section><h2 id="quick-start"><a class="anchor" href="#quick-start">#</a>Quick start</h2>
+<p></p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:NineFrame Bevel=&quot;Sunken&quot; CornerRadius=&quot;3&quot; BorderThickness=&quot;1&quot; Padding=&quot;6,2&quot;
+               Background=&quot;{DynamicResource {x:Static daw:DawSkinKeys.LcdBackground}}&quot;
+               BorderBrush=&quot;{DynamicResource {x:Static daw:DawSkinKeys.LcdBorder}}&quot;&gt;
+    &lt;TextBlock Text=&quot;120.0 BPM&quot; Foreground=&quot;{DynamicResource {x:Static daw:DawSkinKeys.LcdText}}&quot;
+               FontFamily=&quot;{DynamicResource {x:Static daw:DawSkinKeys.LcdFontFamily}}&quot;/&gt;
+&lt;/daw:NineFrame&gt;</code></pre></div>
+</section>
+<section><h2 id="examples"><a class="anchor" href="#examples">#</a>Examples</h2>
+<h3 id="in-your-own-button-template"><a class="anchor" href="#in-your-own-button-template">#</a>In your own button template</h3><p></p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;ControlTemplate TargetType=&quot;Button&quot;&gt;
+    &lt;daw:NineFrame x:Name=&quot;frame&quot; Bevel=&quot;Raised&quot; CornerRadius=&quot;3&quot; BorderThickness=&quot;1&quot; Padding=&quot;10,3&quot;
+                   Background=&quot;{DynamicResource {x:Static daw:DawSkinKeys.ButtonBackground}}&quot;
+                   BorderBrush=&quot;{DynamicResource {x:Static daw:DawSkinKeys.ButtonBorder}}&quot;&gt;
+        &lt;ContentPresenter HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+    &lt;/daw:NineFrame&gt;
+    &lt;ControlTemplate.Triggers&gt;
+        &lt;Trigger Property=&quot;IsPressed&quot; Value=&quot;True&quot;&gt;
+            &lt;Setter TargetName=&quot;frame&quot; Property=&quot;Bevel&quot; Value=&quot;Sunken&quot;/&gt;
+            &lt;Setter TargetName=&quot;frame&quot; Property=&quot;Background&quot;
+                    Value=&quot;{DynamicResource {x:Static daw:DawSkinKeys.ButtonPressed}}&quot;/&gt;
+        &lt;/Trigger&gt;
+    &lt;/ControlTemplate.Triggers&gt;
+&lt;/ControlTemplate&gt;</code></pre></div>
+</section>
+<section><h2 id="xaml-of-the-screenshot"><a class="anchor" href="#xaml-of-the-screenshot">#</a>XAML of the screenshot</h2>
+<p>This is the exact XAML of the screenshot at the top. The gallery app shows it live, so you can edit it and press Ctrl+Enter to see your change.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">Gallery: NineFrame</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;daw:NineFrame Bevel=&quot;Sunken&quot; CornerRadius=&quot;3&quot; BorderThickness=&quot;1&quot; Padding=&quot;10,4&quot;
+                   Background=&quot;{DynamicResource {x:Static daw:DawSkinKeys.LcdBackground}}&quot;
+                   BorderBrush=&quot;{DynamicResource {x:Static daw:DawSkinKeys.LcdBorder}}&quot;&gt;
+        &lt;TextBlock Text=&quot;120.0 BPM&quot; FontSize=&quot;16&quot;
+                   Foreground=&quot;{DynamicResource {x:Static daw:DawSkinKeys.LcdText}}&quot;
+                   FontFamily=&quot;{DynamicResource {x:Static daw:DawSkinKeys.LcdFontFamily}}&quot;/&gt;
+    &lt;/daw:NineFrame&gt;
+    &lt;daw:NineFrame Bevel=&quot;Raised&quot; CornerRadius=&quot;4&quot; BorderThickness=&quot;1&quot; Padding=&quot;14,8&quot; Margin=&quot;12,0,0,0&quot;
+                   Background=&quot;{DynamicResource {x:Static daw:DawSkinKeys.PanelRaised}}&quot;
+                   BorderBrush=&quot;{DynamicResource {x:Static daw:DawSkinKeys.PanelBorder}}&quot;&gt;
+        &lt;TextBlock Text=&quot;RAISED&quot;/&gt;
+    &lt;/daw:NineFrame&gt;
+    &lt;daw:NineFrame Bevel=&quot;Glow&quot; CornerRadius=&quot;4&quot; BorderThickness=&quot;1&quot; Padding=&quot;14,8&quot; Margin=&quot;12,0,0,0&quot;
+                   Background=&quot;{DynamicResource {x:Static daw:DawSkinKeys.PanelBackground}}&quot;
+                   BorderBrush=&quot;{DynamicResource {x:Static daw:DawSkinKeys.Accent}}&quot;&gt;
+        &lt;TextBlock Text=&quot;GLOW&quot;/&gt;
+    &lt;/daw:NineFrame&gt;
+&lt;/StackPanel&gt;</code></pre></div>
+</section>
+<section><h2 id="tips"><a class="anchor" href="#tips">#</a>Tips</h2>
+<p>The renderer is used for a uniform border with one corner radius, and solid or two-stop vertical gradient brushes. Anything else (different widths per side, other brushes) is drawn like a normal <code>Border</code>, so it always works.</p>
+</section>
+<section><h2 id="api-reference"><a class="anchor" href="#api-reference">#</a>API reference</h2>
+<h3 id="properties"><a class="anchor" href="#properties">#</a>Properties</h3><div class="table-wrap"><table class="api"><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">Background</code></td><td><code>Brush</code></td><td><span class="muted">from skin</span></td><td>Fill: a solid colour or a two-stop vertical gradient becomes the nine-patch.</td></tr><tr><td><code class="pn">BorderThickness</code></td><td><code>Thickness</code></td><td><span class="muted">—</span></td><td>Outline width in pixels; a different width per side is drawn like <code>Border</code>.</td></tr><tr><td><code class="pn">CornerRadius</code></td><td><code>CornerRadius</code></td><td><span class="muted">—</span></td><td>Corner radius in pixels.</td></tr><tr><td><code class="pn">Padding</code></td><td><code>Thickness</code></td><td><span class="muted">—</span></td><td>Space between the frame and its child.</td></tr><tr><td><code class="pn">Bevel</code></td><td><code>FrameStyle</code></td><td><code>Flat</code></td><td>Shading of the generated frame.</td></tr></tbody></table></div>
+<details class="brushes"><summary>Colour properties (1)</summary><p>Each one is set by the skin. Set it on one control to override the skin for that control only.</p><div class="table-wrap"><table class="api"><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">BorderBrush</code></td><td>Outline colour (solid).</td></tr></tbody></table></div></details>
+</section>
+<section><h2 id="related-controls"><a class="anchor" href="#related-controls">#</a>Related controls</h2>
+<div class="rel-grid"><a class="rel-card" href="../controls/dawpanel.html"><span class="thumb"><img src="../img/graphite/panel.png" data-shot="panel" alt="" loading="lazy"></span><span>DawPanel</span></a><a class="rel-card" href="../controls/timedisplay.html"><span class="thumb"><img src="../img/graphite/time-display.png" data-shot="time-display" alt="" loading="lazy"></span><span>TimeDisplay</span></a></div>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#overview">Overview</a></li><li class="l2"><a href="#quick-start">Quick start</a></li><li class="l2"><a href="#examples">Examples</a></li><li class="l3"><a href="#in-your-own-button-template">In your own button template</a></li><li class="l2"><a href="#xaml-of-the-screenshot">XAML of the screenshot</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#api-reference">API reference</a></li><li class="l3"><a href="#properties">Properties</a></li><li class="l2"><a href="#related-controls">Related controls</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

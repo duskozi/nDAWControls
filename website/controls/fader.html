@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fader · nDAWControls</title>
+<meta name="description" content="Fader: A slider with a moving cap, vertical or horizontal, with a decibel curve for mixer channels. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:title" content="Fader · nDAWControls">
+<meta property="og:description" content="Fader: A slider with a moving cap, vertical or horizontal, with a decibel curve for mixer channels. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html">Getting started</a></li><li><a href="../guide/concepts.html">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html">MVVM and binding</a></li><li><a href="../guide/skins.html">Skins</a></li><li><a href="../guide/recipes.html">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html" aria-current="page">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs"><a href="../controls/index.html">Controls</a> / Parameters</div><h1>Fader</h1><p class="lede">A slider with a moving cap, vertical or horizontal, with a decibel curve for mixer channels.</p><div class="head-row"><code class="cls">&lt;daw:Fader&gt;</code><div class="skin-tabs" role="group" aria-label="Skin of the screenshots"><span>Skin</span><button type="button" class="skin-dot" data-skin="graphite" title="Graphite" aria-label="Graphite skin" style="--dot:#ff8a2a"></button><button type="button" class="skin-dot" data-skin="studio" title="Studio" aria-label="Studio skin" style="--dot:#4ea1ff"></button><button type="button" class="skin-dot" data-skin="lightclassic" title="Light classic" aria-label="Light classic skin" style="--dot:#2f7de1"></button><button type="button" class="skin-dot" data-skin="retrohardware" title="Retro hardware" aria-label="Retro hardware skin" style="--dot:#ff9a3c"></button><button type="button" class="skin-dot" data-skin="highcontrast" title="High contrast" aria-label="High contrast skin" style="--dot:#ffd400"></button><span class="skin-name">Graphite</span></div></div></div><section><h2 id="overview"><a class="anchor" href="#overview">#</a>Overview</h2>
+<p><code>Fader</code> is the long-throw slider of a mixing desk. Like <code>Knob</code> it is a value control, so everything about <code>Minimum</code>, <code>Maximum</code>, <code>Taper</code>, <code>DefaultValue</code> and the value text works the same way.</p>
+<p>With <code>Taper=&quot;Decibel&quot;</code> the travel follows the usual mixer curve: lots of room around 0 dB and the bottom compressed towards -∞.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/fader.png" data-shot="fader" width="323" height="268" alt="A vertical volume fader in dB and a horizontal glide fader." decoding="async"></div><figcaption>A vertical volume fader in dB and a horizontal glide fader.</figcaption></figure><div class="usefor"><h4>Use it for</h4><ul><li>channel and master volume in a mixer</li><li>sends, glide, crossfades and other long-throw values (horizontal)</li></ul></div>
+</section>
+<section><h2 id="quick-start"><a class="anchor" href="#quick-start">#</a>Quick start</h2>
+<p></p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:Fader Height=&quot;220&quot; Taper=&quot;Decibel&quot; Minimum=&quot;-60&quot; Maximum=&quot;6&quot; DefaultValue=&quot;0&quot; MinimumText=&quot;-∞&quot;
+           Value=&quot;{Binding VolumeDb, Mode=TwoWay}&quot;
+           ValueFormatter=&quot;{x:Static daw:ValueFormatters.Decibel}&quot;/&gt;</code></pre></div>
+</section>
+<section><h2 id="examples"><a class="anchor" href="#examples">#</a>Examples</h2>
+<h3 id="horizontal-fader"><a class="anchor" href="#horizontal-fader">#</a>Horizontal fader</h3><p></p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:Fader Orientation=&quot;Horizontal&quot; Width=&quot;220&quot; Height=&quot;24&quot; Label=&quot;Glide&quot; Value=&quot;0.25&quot;
+           ValueFormatter=&quot;{x:Static daw:ValueFormatters.Percent}&quot;/&gt;</code></pre></div><h3 id="fader-with-a-db-scale-and-a-meter"><a class="anchor" href="#fader-with-a-db-scale-and-a-meter">#</a>Fader with a dB scale and a meter</h3><p>Put a <code>ValueScale</code> and a <code>LevelMeter</code> next to the fader. The fader cap is 40 pixels high, so padding the scale and the meter by 20 at the top and bottom lines the ticks up with the middle of the cap. Use the same <code>Taper</code>, <code>Minimum</code> and <code>Maximum</code> on the scale as on the fader.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/fader-with-scale-and-meter.png" data-shot="fader-with-scale-and-meter" width="110" height="288" alt="fader with scale and meter" loading="lazy" decoding="async"></div></figure><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;daw:ValueScale Placement=&quot;End&quot; Padding=&quot;0,20,0,20&quot; Minimum=&quot;-60&quot; Maximum=&quot;0&quot; Taper=&quot;Decibel&quot;
+                    MinimumText=&quot;-∞&quot; Ticks=&quot;0 -3 -6 -12 -20 -30 -60&quot;/&gt;
+    &lt;daw:Fader Width=&quot;30&quot; Height=&quot;240&quot; Taper=&quot;Decibel&quot; Minimum=&quot;-60&quot; Maximum=&quot;0&quot; ShowValueText=&quot;False&quot;/&gt;
+    &lt;daw:LevelMeter x:Name=&quot;meter&quot; Width=&quot;8&quot; Margin=&quot;4,20,0,20&quot;/&gt;
+&lt;/StackPanel&gt;</code></pre></div><h3 id="jump-to-a-click"><a class="anchor" href="#jump-to-a-click">#</a>Jump to a click</h3><p>By default a click on the track does nothing and only the cap can be dragged, as on hardware. <code>IsMoveToPointEnabled=&quot;True&quot;</code> moves the cap to the click.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:Fader Height=&quot;160&quot; IsMoveToPointEnabled=&quot;True&quot;/&gt;</code></pre></div><h3 id="linking-db-and-gain"><a class="anchor" href="#linking-db-and-gain">#</a>Linking dB and gain</h3><p>Faders work in dB. Convert to a linear gain for your audio engine:</p><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">fader.ValueChanged += (s, e) =&gt;
+{
+    double db = e.NewValue;
+    float gain = db &lt;= fader.Minimum ? 0f : (float)Math.Pow(10, db / 20);
+    engine.SetChannelGain(channel, gain);
+};</code></pre></div>
+</section>
+<section><h2 id="xaml-of-the-screenshot"><a class="anchor" href="#xaml-of-the-screenshot">#</a>XAML of the screenshot</h2>
+<p>This is the exact XAML of the screenshot at the top. The gallery app shows it live, so you can edit it and press Ctrl+Enter to see your change.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">Gallery: Fader</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;daw:Fader Height=&quot;220&quot; Taper=&quot;Decibel&quot; Minimum=&quot;-60&quot; Maximum=&quot;6&quot; DefaultValue=&quot;0&quot; Value=&quot;-6&quot;
+               MinimumText=&quot;-∞&quot; ValueFormatter=&quot;{x:Static daw:ValueFormatters.Decibel}&quot;/&gt;
+    &lt;daw:Fader Orientation=&quot;Horizontal&quot; Width=&quot;220&quot; Height=&quot;24&quot; Margin=&quot;24,0,0,0&quot; VerticalAlignment=&quot;Top&quot;
+               Label=&quot;Glide&quot; Value=&quot;0.25&quot; ValueFormatter=&quot;{x:Static daw:ValueFormatters.Percent}&quot;/&gt;
+&lt;/StackPanel&gt;</code></pre></div>
+</section>
+<section><h2 id="mouse-and-keyboard"><a class="anchor" href="#mouse-and-keyboard">#</a>Mouse and keyboard</h2>
+<div class="table-wrap"><table class="kbd-table"><thead><tr><th>Input</th><th>What it does</th></tr></thead><tbody><tr><td>Drag the cap</td><td>Moves the fader (Shift for fine)</td></tr><tr><td>Mouse wheel</td><td>Small steps</td></tr><tr><td>Double-click</td><td>Back to <code>DefaultValue</code></td></tr><tr><td>Arrow keys, Page Up/Down, Home/End</td><td>Steps, large steps, ends</td></tr></tbody></table></div>
+</section>
+<section><h2 id="tips"><a class="anchor" href="#tips">#</a>Tips</h2>
+<ul><li><code>ShowValueText=&quot;False&quot;</code> hides the readout under the fader when your layout shows the value elsewhere.</li><li>For a full mixer channel with pan, mute, solo and meters in one control, use <a href="../controls/channelstrip.html">ChannelStrip</a>.</li></ul>
+</section>
+<section><h2 id="api-reference"><a class="anchor" href="#api-reference">#</a>API reference</h2>
+<h3 id="properties"><a class="anchor" href="#properties">#</a>Properties</h3><p><code>Fader</code> also has everything from WPF&#x27;s <code>RangeBase</code> (<code>Minimum</code>, <code>Maximum</code>, <code>Value</code>, <code>ValueChanged</code>, <code>SmallChange</code>, <code>LargeChange</code>) and the <a href="../guide/concepts.html#value-controls">shared value-control properties</a> (<code>DefaultValue</code>, <code>Taper</code>, <code>Step</code>, <code>Label</code>, <code>ValueFormatter</code>, <code>MinimumText</code> …).</p><div class="table-wrap"><table class="api"><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">Orientation</code></td><td><code>Orientation</code></td><td><code>Vertical</code></td><td>Vertical (default) or horizontal.</td></tr><tr><td><code class="pn">ShowValueText</code></td><td><code>bool</code></td><td><code>true</code></td><td>Show the value readout under the fader (turn off when the host shows it elsewhere).</td></tr><tr><td><code class="pn">IsMoveToPointEnabled</code></td><td><code>bool</code></td><td><code>false</code></td><td>Clicking the track (not the cap) jumps the cap to the mouse.</td></tr></tbody></table></div>
+</section>
+<section><h2 id="related-controls"><a class="anchor" href="#related-controls">#</a>Related controls</h2>
+<div class="rel-grid"><a class="rel-card" href="../controls/channelstrip.html"><span class="thumb"><img src="../img/graphite/channel-strip.png" data-shot="channel-strip" alt="" loading="lazy"></span><span>ChannelStrip</span></a><a class="rel-card" href="../controls/valuescale.html"><span class="thumb"><img src="../img/graphite/fader-with-scale-and-meter.png" data-shot="fader-with-scale-and-meter" alt="" loading="lazy"></span><span>ValueScale</span></a><a class="rel-card" href="../controls/levelmeter.html"><span class="thumb"><img src="../img/graphite/level-meter.png" data-shot="level-meter" alt="" loading="lazy"></span><span>LevelMeter</span></a><a class="rel-card" href="../controls/knob.html"><span class="thumb"><img src="../img/graphite/knob.png" data-shot="knob" alt="" loading="lazy"></span><span>Knob</span></a></div>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#overview">Overview</a></li><li class="l2"><a href="#quick-start">Quick start</a></li><li class="l2"><a href="#examples">Examples</a></li><li class="l3"><a href="#horizontal-fader">Horizontal fader</a></li><li class="l3"><a href="#fader-with-a-db-scale-and-a-meter">Fader with a dB scale and a meter</a></li><li class="l3"><a href="#jump-to-a-click">Jump to a click</a></li><li class="l3"><a href="#linking-db-and-gain">Linking dB and gain</a></li><li class="l2"><a href="#xaml-of-the-screenshot">XAML of the screenshot</a></li><li class="l2"><a href="#mouse-and-keyboard">Mouse and keyboard</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#api-reference">API reference</a></li><li class="l3"><a href="#properties">Properties</a></li><li class="l2"><a href="#related-controls">Related controls</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

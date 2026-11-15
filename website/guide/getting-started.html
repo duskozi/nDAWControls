@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting started · nDAWControls</title>
+<meta name="description" content="Install nDAWControls from NuGet and build your first skinned WPF panel with a knob, a fader and a live meter.">
+<meta property="og:title" content="Getting started · nDAWControls">
+<meta property="og:description" content="Install nDAWControls from NuGet and build your first skinned WPF panel with a knob, a fader and a live meter.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html" aria-current="page">Getting started</a></li><li><a href="../guide/concepts.html">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html">MVVM and binding</a></li><li><a href="../guide/skins.html">Skins</a></li><li><a href="../guide/recipes.html">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs">Guide</div><h1>Getting started</h1><p class="lede">From an empty WPF project to a skinned panel with a knob, a fader and a live meter in five minutes.</p></div><section><h2 id="requirements"><a class="anchor" href="#requirements">#</a>Requirements</h2>
+<ul><li>Windows 10 or 11</li><li>.NET 8 or .NET 10, WPF (<code>net8.0-windows</code> or <code>net10.0-windows</code>)</li><li>Any CPU. The native renderer is used in 64-bit (x64) processes; x86 and ARM64 processes draw the same frames as vectors.</li><li>The Microsoft Visual C++ Redistributable (x64) for the native renderer. Most PCs already have it; without it the controls simply draw vectors.</li></ul>
+</section>
+<section><h2 id="install"><a class="anchor" href="#install">#</a>Install</h2>
+<p>Add the package from NuGet with the .NET CLI:</p><div class="code"><div class="code-head"><span class="lang">Terminal</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">dotnet add package nDAWControls</code></pre></div><p>Or in Visual Studio: right-click the project, <strong>Manage NuGet Packages</strong>, search for <strong>nDAWControls</strong> and install it. Or add the reference to your project file yourself:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">MyApp.csproj</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;PackageReference Include=&quot;nDAWControls&quot; Version=&quot;1.0.2&quot; /&gt;</code></pre></div><p>The package brings NinePatchWpf and its native renderer (<code>NinePatchLib.dll</code>). There is nothing else to copy or set up.</p>
+</section>
+<section><h2 id="add-the-namespace"><a class="anchor" href="#add-the-namespace">#</a>Add the namespace</h2>
+<p>Add the <code>daw</code> XML namespace to the root element of any window or user control:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;Window x:Class=&quot;MyApp.MainWindow&quot;
+xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+xmlns:daw=&quot;urn:ndaw-controls&quot;&gt;</code></pre></div><p>In C#, the controls are in the <code>nDAWControls</code> namespace, skins in <code>nDAWControls.Skinning</code> and the note and pattern models in <code>nDAWControls.Models</code>.</p>
+</section>
+<section><h2 id="your-first-panel"><a class="anchor" href="#your-first-panel">#</a>Your first panel</h2>
+<p>A complete window with a knob, a fader with a meter, and mute and solo buttons. The window takes its colours from the skin, so it matches the controls:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">MainWindow.xaml</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;Window x:Class=&quot;MyApp.MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:daw=&quot;urn:ndaw-controls&quot;
+        Title=&quot;My synth&quot; Width=&quot;420&quot; Height=&quot;340&quot;
+        Background=&quot;{DynamicResource {x:Static daw:DawSkinKeys.WindowBackground}}&quot;
+        TextElement.Foreground=&quot;{DynamicResource {x:Static daw:DawSkinKeys.Text}}&quot;&gt;
+
+    &lt;daw:DawPanel Header=&quot;CHANNEL&quot; Margin=&quot;12&quot; CanHide=&quot;False&quot;&gt;
+        &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;12&quot;&gt;
+            &lt;StackPanel&gt;
+                &lt;daw:Knob x:Name=&quot;cutoff&quot; Label=&quot;Cutoff&quot; Taper=&quot;Log&quot; Minimum=&quot;20&quot; Maximum=&quot;20000&quot;
+                          DefaultValue=&quot;1200&quot; Value=&quot;1200&quot;
+                          ValueFormatter=&quot;{x:Static daw:ValueFormatters.Frequency}&quot;/&gt;
+                &lt;daw:Knob Label=&quot;Pan&quot; IsBipolar=&quot;True&quot; Minimum=&quot;-1&quot; Maximum=&quot;1&quot;
+                          ValueFormatter=&quot;{x:Static daw:ValueFormatters.Pan}&quot;/&gt;
+            &lt;/StackPanel&gt;
+            &lt;daw:Fader x:Name=&quot;volume&quot; Height=&quot;220&quot; Margin=&quot;16,0,0,0&quot; Taper=&quot;Decibel&quot;
+                       Minimum=&quot;-60&quot; Maximum=&quot;6&quot; DefaultValue=&quot;0&quot; MinimumText=&quot;-∞&quot;
+                       ValueFormatter=&quot;{x:Static daw:ValueFormatters.Decibel}&quot;/&gt;
+            &lt;daw:LevelMeter x:Name=&quot;meter&quot; Width=&quot;10&quot; Height=&quot;200&quot; Margin=&quot;6,0,0,0&quot; VerticalAlignment=&quot;Top&quot;/&gt;
+            &lt;StackPanel Margin=&quot;16,0,0,0&quot;&gt;
+                &lt;daw:LedToggleButton Role=&quot;Mute&quot; Content=&quot;M&quot; Width=&quot;32&quot;/&gt;
+                &lt;daw:LedToggleButton Role=&quot;Solo&quot; Content=&quot;S&quot; Width=&quot;32&quot; Margin=&quot;0,4,0,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+    &lt;/daw:DawPanel&gt;
+&lt;/Window&gt;</code></pre></div><p>In the code-behind, react to the controls and feed the meter. Here a timer stands in for your audio engine:</p><div class="code"><div class="code-head"><span class="lang">C#</span><span class="code-title">MainWindow.xaml.cs</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">using System.Windows;
+using System.Windows.Threading;
+using nDAWControls.Skinning;
+
+namespace MyApp;
+
+public partial class MainWindow : Window
+{
+    private readonly DispatcherTimer _fake = new() { Interval = TimeSpan.FromMilliseconds(30) };
+    private readonly Random _rng = new();
+
+    public MainWindow()
+    {
+        InitializeComponent();
+
+        cutoff.ValueChanged += (s, e) =&gt; Title = $&quot;Cutoff {e.NewValue:0} Hz&quot;;
+
+        // In a real app this is your audio callback, on the audio thread.
+        _fake.Tick += (s, e) =&gt;
+        {
+            float peak = (float)(0.4 + _rng.NextDouble() * 0.5);
+            meter.PushLevels(peak, peak * 0.6f);
+        };
+        _fake.Start();
+    }
+}</code></pre></div>
+</section>
+<section><h2 id="pick-a-skin"><a class="anchor" href="#pick-a-skin">#</a>Pick a skin</h2>
+<p>Graphite is the default. Apply another skin once at start-up, for example in <code>App.xaml.cs</code>:</p><div class="code"><div class="code-head"><span class="lang">C#</span><span class="code-title">App.xaml.cs</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">using System.Windows;
+using nDAWControls.Skinning;
+
+public partial class App : Application
+{
+    protected override void OnStartup(StartupEventArgs e)
+    {
+        base.OnStartup(e);
+        SkinManager.Apply(DawSkin.Studio);
+    }
+}</code></pre></div><p>You can call <code>SkinManager.Apply</code> again at any time, for example from a settings menu, and every control changes at once. See <a href="../guide/skins.html">Skins</a> for skins per panel and your own skins.</p>
+</section>
+<section><h2 id="try-the-gallery"><a class="anchor" href="#try-the-gallery">#</a>Try the gallery</h2>
+<p>The gallery sample shows every control live next to its XAML and C#. You can edit the XAML, press Ctrl+Enter to see the change, and copy it into your app. Its second view is a studio demo with a mixer, a synth, a piano roll and a keyboard.</p>
+<p>Download the ready-to-run gallery from the <a href="https://github.com/duskozi/nDAWControls/releases">releases page</a>, or run it from the source:</p><div class="code"><div class="code-head"><span class="lang">Terminal</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-bash">git clone https://github.com/duskozi/nDAWControls.git
+cd nDAWControls
+dotnet run --project samples/Gallery</code></pre></div><figure class="shot "><div class="shot-frame"><img src="../img/graphite/gallery-controls.png" data-shot="gallery-controls" width="1084" height="749" alt="The control catalog of the gallery: the live control, its XAML (editable) and its C#." loading="lazy" decoding="async"></div><figcaption>The control catalog of the gallery: the live control, its XAML (editable) and its C#.</figcaption></figure>
+</section>
+<section><h2 id="next-steps"><a class="anchor" href="#next-steps">#</a>Next steps</h2>
+<ul><li><a href="../guide/concepts.html">Core concepts</a>: value controls, tapers, value text, models and drawing.</li><li><a href="../guide/threading.html">Threading and real-time data</a>: meters, MIDI lights and playheads from your engine.</li><li><a href="../guide/mvvm.html">MVVM and binding</a>: view-models, commands and undo.</li><li><a href="../guide/recipes.html">Recipes</a>: a mixer, MIDI with DryWetMidi, audio meters with NAudio, a step sequencer engine.</li><li><a href="../controls/index.html">All controls</a>.</li></ul>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#requirements">Requirements</a></li><li class="l2"><a href="#install">Install</a></li><li class="l2"><a href="#add-the-namespace">Add the namespace</a></li><li class="l2"><a href="#your-first-panel">Your first panel</a></li><li class="l2"><a href="#pick-a-skin">Pick a skin</a></li><li class="l2"><a href="#try-the-gallery">Try the gallery</a></li><li class="l2"><a href="#next-steps">Next steps</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

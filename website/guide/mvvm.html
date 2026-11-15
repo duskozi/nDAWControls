@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MVVM and binding · nDAWControls</title>
+<meta name="description" content="Use nDAWControls with view-models: two-way binding, commands, collections and undo.">
+<meta property="og:title" content="MVVM and binding · nDAWControls">
+<meta property="og:description" content="Use nDAWControls with view-models: two-way binding, commands, collections and undo.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html">Getting started</a></li><li><a href="../guide/concepts.html">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html" aria-current="page">MVVM and binding</a></li><li><a href="../guide/skins.html">Skins</a></li><li><a href="../guide/recipes.html">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs">Guide</div><h1>MVVM and binding</h1><p class="lede">The controls are ordinary WPF controls with dependency properties, routed events and commands, so they fit any MVVM setup.</p></div><section><h2 id="binding-values"><a class="anchor" href="#binding-values">#</a>Binding values</h2>
+<p>Bind value properties two-way. <code>Value</code> of <code>Knob</code>, <code>Fader</code> and <code>ValueBox</code> binds two-way by default (it comes from <code>RangeBase</code>); for the others write <code>Mode=TwoWay</code> to be safe:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:Knob Label=&quot;Cutoff&quot; Value=&quot;{Binding Cutoff}&quot;/&gt;
+&lt;daw:XYPad XValue=&quot;{Binding X, Mode=TwoWay}&quot; YValue=&quot;{Binding Y, Mode=TwoWay}&quot;/&gt;
+&lt;daw:ChannelStrip Volume=&quot;{Binding Volume, Mode=TwoWay}&quot; IsMuted=&quot;{Binding IsMuted, Mode=TwoWay}&quot;/&gt;
+&lt;daw:EnvelopeEditor Attack=&quot;{Binding Attack, Mode=TwoWay}&quot; Sustain=&quot;{Binding Sustain, Mode=TwoWay}&quot;/&gt;</code></pre></div><p>A minimal view-model base, used in the examples on this site (or use CommunityToolkit.Mvvm&#x27;s <code>ObservableObject</code>):</p><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+public abstract class ObservableObject : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected bool Set&lt;T&gt;(ref T field, T value, [CallerMemberName] string? name = null)
+    {
+        if (EqualityComparer&lt;T&gt;.Default.Equals(field, value)) return false;
+        field = value;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        return true;
+    }
+}
+
+public sealed class SynthViewModel : ObservableObject
+{
+    private double _cutoff = 1200, _resonance = 0.2;
+    public double Cutoff    { get =&gt; _cutoff;    set { if (Set(ref _cutoff, value)) Engine.SetCutoff(value); } }
+    public double Resonance { get =&gt; _resonance; set { if (Set(ref _resonance, value)) Engine.SetResonance(value); } }
+}</code></pre></div>
+</section>
+<section><h2 id="commands"><a class="anchor" href="#commands">#</a>Commands</h2>
+<p><code>TransportBar</code> exposes <code>PlayCommand</code>, <code>StopCommand</code>, <code>RecordCommand</code>, <code>RewindCommand</code>, <code>ForwardCommand</code> and <code>ToStartCommand</code>. <code>PlayCommand</code> and <code>RecordCommand</code> receive the new on/off state as their parameter. <code>LedToggleButton</code> and <code>TransportButton</code> are toggle buttons, so <code>Command</code> and <code>IsChecked</code> work as usual.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:TransportBar IsPlaying=&quot;{Binding IsPlaying, Mode=TwoWay}&quot; Tempo=&quot;{Binding Tempo, Mode=TwoWay}&quot;
+                  PlayCommand=&quot;{Binding PlayCommand}&quot; StopCommand=&quot;{Binding StopCommand}&quot;/&gt;</code></pre></div><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">// With CommunityToolkit.Mvvm
+public IRelayCommand&lt;bool&gt; PlayCommand =&gt; new RelayCommand&lt;bool&gt;(play =&gt; { if (play) Engine.Play(); else Engine.Pause(); });
+public IRelayCommand StopCommand =&gt; new RelayCommand(() =&gt; { Engine.Stop(); Position = 0; });</code></pre></div>
+</section>
+<section><h2 id="collections"><a class="anchor" href="#collections">#</a>Collections</h2>
+<p><code>PianoRoll.Notes</code> takes any <code>IList&lt;MidiNote&gt;</code>; use an <code>ObservableCollection&lt;MidiNote&gt;</code> so additions and removals from your view-model show at once. Each <code>MidiNote</code> raises <code>PropertyChanged</code>, so changing a note&#x27;s pitch or velocity in code redraws it too. The same goes for <code>ControllerLane.Points</code>.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:PianoRoll Notes=&quot;{Binding Notes}&quot; PlayheadPosition=&quot;{Binding Position, Mode=TwoWay}&quot;/&gt;</code></pre></div>
+</section>
+<section><h2 id="undo"><a class="anchor" href="#undo">#</a>Undo</h2>
+<p>Value controls and the XY pad and envelope raise <code>DragStarted</code> and <code>DragCompleted</code>; the piano roll raises <code>NotesEdited</code> and the controller lane <code>LaneEdited</code> once per finished gesture. Those are the moments to record undo steps, so a drag is one step and not hundreds.</p><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">// A tiny snapshot-based undo for a piano roll
+private readonly Stack&lt;MidiNote[]&gt; _undo = new();
+
+roll.NotesEdited += (s, e) =&gt; _undo.Push(notes.Select(n =&gt; n.Clone()).ToArray());
+
+void Undo()
+{
+    if (_undo.Count &lt; 2) return;
+    _undo.Pop();                                   // the current state
+    var previous = _undo.Peek();
+    notes.Clear();
+    foreach (var n in previous) notes.Add(n.Clone());
+}</code></pre></div>
+</section>
+<section><h2 id="events-in-xaml-or-code"><a class="anchor" href="#events-in-xaml-or-code">#</a>Events in XAML or code</h2>
+<p>Routed events (<code>DragStarted</code>, <code>NoteOn</code>, <code>NotesEdited</code>, <code>PedalChanged</code> …) can be handled in XAML, in code-behind, or with an event-to-command behavior (Microsoft.Xaml.Behaviors.Wpf) if you keep code-behind empty.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:PianoKeyboard NoteOn=&quot;OnKeyNoteOn&quot; NoteOff=&quot;OnKeyNoteOff&quot;/&gt;</code></pre></div>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#binding-values">Binding values</a></li><li class="l2"><a href="#commands">Commands</a></li><li class="l2"><a href="#collections">Collections</a></li><li class="l2"><a href="#undo">Undo</a></li><li class="l2"><a href="#events-in-xaml-or-code">Events in XAML or code</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

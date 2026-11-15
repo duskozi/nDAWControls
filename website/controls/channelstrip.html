@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChannelStrip · nDAWControls</title>
+<meta name="description" content="ChannelStrip: A complete mixer channel: name, pan, fader with a dB scale, stereo meter, mute, solo and arm. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:title" content="ChannelStrip · nDAWControls">
+<meta property="og:description" content="ChannelStrip: A complete mixer channel: name, pan, fader with a dB scale, stereo meter, mute, solo and arm. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html">Getting started</a></li><li><a href="../guide/concepts.html">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html">MVVM and binding</a></li><li><a href="../guide/skins.html">Skins</a></li><li><a href="../guide/recipes.html">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html" aria-current="page">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs"><a href="../controls/index.html">Controls</a> / Mixer and layout</div><h1>ChannelStrip</h1><p class="lede">A complete mixer channel: name, pan, fader with a dB scale, stereo meter, mute, solo and arm.</p><div class="head-row"><code class="cls">&lt;daw:ChannelStrip&gt;</code><div class="skin-tabs" role="group" aria-label="Skin of the screenshots"><span>Skin</span><button type="button" class="skin-dot" data-skin="graphite" title="Graphite" aria-label="Graphite skin" style="--dot:#ff8a2a"></button><button type="button" class="skin-dot" data-skin="studio" title="Studio" aria-label="Studio skin" style="--dot:#4ea1ff"></button><button type="button" class="skin-dot" data-skin="lightclassic" title="Light classic" aria-label="Light classic skin" style="--dot:#2f7de1"></button><button type="button" class="skin-dot" data-skin="retrohardware" title="Retro hardware" aria-label="Retro hardware skin" style="--dot:#ff9a3c"></button><button type="button" class="skin-dot" data-skin="highcontrast" title="High contrast" aria-label="High contrast skin" style="--dot:#ffd400"></button><span class="skin-name">Graphite</span></div></div></div><section><h2 id="overview"><a class="anchor" href="#overview">#</a>Overview</h2>
+<p><code>ChannelStrip</code> puts everything a mixer channel needs in one control. <code>Volume</code> is in dB (-70 = -∞ up to +6), <code>Pan</code> goes from -1 to 1, and <code>IsMuted</code>, <code>IsSoloed</code> and <code>IsArmed</code> bind two-way. The stereo meter is fed with <code>PushLevels</code> from any thread, like <code>LevelMeter</code>.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/channel-strip.png" data-shot="channel-strip" width="308" height="408" alt="Three channel strips with live meters." decoding="async"></div><figcaption>Three channel strips with live meters.</figcaption></figure><div class="usefor"><h4>Use it for</h4><ul><li>mixer windows, a mixer panel docked under an arranger, a master section</li></ul></div>
+</section>
+<section><h2 id="quick-start"><a class="anchor" href="#quick-start">#</a>Quick start</h2>
+<p></p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;daw:ChannelStrip TrackName=&quot;Kick&quot; TrackColor=&quot;#FFFF6B5A&quot; Volume=&quot;{Binding KickDb, Mode=TwoWay}&quot;/&gt;
+    &lt;daw:ChannelStrip TrackName=&quot;Bass&quot; TrackColor=&quot;#FF6FA8FF&quot; Volume=&quot;-6&quot; Pan=&quot;-0.2&quot;/&gt;
+    &lt;daw:ChannelStrip TrackName=&quot;Master&quot; ShowArmButton=&quot;False&quot;
+                      TrackColor=&quot;{DynamicResource {x:Static daw:DawSkinKeys.Accent}}&quot;/&gt;
+&lt;/StackPanel&gt;</code></pre></div><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">strip.PushLevels(peakLeft, rmsLeft, peakRight, rmsRight);   // any thread, linear values</code></pre></div>
+</section>
+<section><h2 id="examples"><a class="anchor" href="#examples">#</a>Examples</h2>
+<h3 id="a-mixer-from-a-collection"><a class="anchor" href="#a-mixer-from-a-collection">#</a>A mixer from a collection</h3><p>Bind an <code>ItemsControl</code> to your tracks. See the <a href="../guide/recipes.html#a-mixer-from-a-view-model">mixer recipe</a> for the full view-model and meter feed.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;ItemsControl ItemsSource=&quot;{Binding Tracks}&quot;&gt;
+    &lt;ItemsControl.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;&lt;StackPanel Orientation=&quot;Horizontal&quot;/&gt;&lt;/ItemsPanelTemplate&gt;
+    &lt;/ItemsControl.ItemsPanel&gt;
+    &lt;ItemsControl.ItemTemplate&gt;
+        &lt;DataTemplate&gt;
+            &lt;daw:ChannelStrip TrackName=&quot;{Binding Name}&quot; TrackColor=&quot;{Binding Color}&quot;
+                              Volume=&quot;{Binding Volume, Mode=TwoWay}&quot; Pan=&quot;{Binding Pan, Mode=TwoWay}&quot;
+                              IsMuted=&quot;{Binding IsMuted, Mode=TwoWay}&quot; IsSoloed=&quot;{Binding IsSoloed, Mode=TwoWay}&quot;
+                              IsArmed=&quot;{Binding IsArmed, Mode=TwoWay}&quot; Margin=&quot;0,0,4,0&quot;/&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ItemsControl.ItemTemplate&gt;
+&lt;/ItemsControl&gt;</code></pre></div><h3 id="busses-and-the-master"><a class="anchor" href="#busses-and-the-master">#</a>Busses and the master</h3><p>Hide the arm button where recording makes no sense:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:ChannelStrip TrackName=&quot;Reverb&quot; ShowArmButton=&quot;False&quot; TrackColor=&quot;#FFB18CFF&quot;/&gt;</code></pre></div>
+</section>
+<section><h2 id="xaml-of-the-screenshot"><a class="anchor" href="#xaml-of-the-screenshot">#</a>XAML of the screenshot</h2>
+<p>This is the exact XAML of the screenshot at the top. The gallery app shows it live, so you can edit it and press Ctrl+Enter to see your change.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">Gallery: Channel strip</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;StackPanel Orientation=&quot;Horizontal&quot; Height=&quot;360&quot;&gt;
+    &lt;daw:ChannelStrip x:Name=&quot;kick&quot; TrackName=&quot;Kick&quot; TrackColor=&quot;#FFFF6B5A&quot;/&gt;
+    &lt;daw:ChannelStrip x:Name=&quot;bass&quot; TrackName=&quot;Bass&quot; TrackColor=&quot;#FF6FA8FF&quot; Volume=&quot;-6&quot; Pan=&quot;-0.2&quot; Margin=&quot;4,0,0,0&quot;/&gt;
+    &lt;daw:ChannelStrip x:Name=&quot;keys&quot; TrackName=&quot;Keys&quot; TrackColor=&quot;#FF5AD1A0&quot; Volume=&quot;-9&quot; IsArmed=&quot;True&quot; Margin=&quot;4,0,0,0&quot;/&gt;
+&lt;/StackPanel&gt;</code></pre></div>
+</section>
+<section><h2 id="mouse-and-keyboard"><a class="anchor" href="#mouse-and-keyboard">#</a>Mouse and keyboard</h2>
+<div class="table-wrap"><table class="kbd-table"><thead><tr><th>Input</th><th>What it does</th></tr></thead><tbody><tr><td>Fader</td><td>Drag, wheel or arrow keys; double-click for 0 dB</td></tr><tr><td>Pan knob</td><td>Drag; double-click for centre</td></tr><tr><td>M / S / R</td><td>Mute, solo, arm</td></tr><tr><td>Clip lights</td><td>Click to clear</td></tr></tbody></table></div>
+</section>
+<section><h2 id="api-reference"><a class="anchor" href="#api-reference">#</a>API reference</h2>
+<h3 id="properties"><a class="anchor" href="#properties">#</a>Properties</h3><div class="table-wrap"><table class="api"><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">TrackName</code></td><td><code>string</code></td><td><code>&quot;Track&quot;</code></td><td>Name shown at the top of the strip.</td></tr><tr><td><code class="pn">TrackColor</code></td><td><code>Brush</code></td><td><code>null</code></td><td>Track colour, shown as the strip&#x27;s top bar and the pan arc.</td></tr><tr><td><code class="pn">Volume</code></td><td><code>double</code></td><td><code>0</code></td><td>Fader level in dB (-70 = -∞ … +6).</td></tr><tr><td><code class="pn">Pan</code></td><td><code>double</code></td><td><code>0</code></td><td>-1 (left) … +1 (right).</td></tr><tr><td><code class="pn">IsMuted</code></td><td><code>bool</code></td><td><span class="muted">—</span></td><td>Whether the track is muted.</td></tr><tr><td><code class="pn">IsSoloed</code></td><td><code>bool</code></td><td><span class="muted">—</span></td><td>Whether the track is soloed.</td></tr><tr><td><code class="pn">IsArmed</code></td><td><code>bool</code></td><td><span class="muted">—</span></td><td>Whether the track is armed for recording.</td></tr><tr><td><code class="pn">ShowArmButton</code></td><td><code>bool</code></td><td><code>true</code></td><td>Hide Arm on busses / master.</td></tr><tr><td><code class="pn">PeakLeft</code></td><td><code>double</code></td><td><span class="muted">—</span></td><td>Left peak level as linear gain (1 = 0 dBFS).</td></tr><tr><td><code class="pn">PeakRight</code></td><td><code>double</code></td><td><span class="muted">—</span></td><td>Right peak level as linear gain (1 = 0 dBFS).</td></tr><tr><td><code class="pn">RmsLeft</code></td><td><code>double</code></td><td><span class="muted">—</span></td><td>Left RMS level as linear gain (1 = 0 dBFS).</td></tr><tr><td><code class="pn">RmsRight</code></td><td><code>double</code></td><td><span class="muted">—</span></td><td>Right RMS level as linear gain (1 = 0 dBFS).</td></tr></tbody></table></div>
+<h3 id="methods"><a class="anchor" href="#methods">#</a>Methods</h3><div class="table-wrap"><table class="api"><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">PushLevels(float peakLeft, float rmsLeft, float peakRight, float rmsRight)</code></td><td>Thread-safe: forwards audio-thread levels to both meters (see <code>PushLevels</code>).</td></tr></tbody></table></div>
+</section>
+<section><h2 id="related-controls"><a class="anchor" href="#related-controls">#</a>Related controls</h2>
+<div class="rel-grid"><a class="rel-card" href="../controls/fader.html"><span class="thumb"><img src="../img/graphite/fader.png" data-shot="fader" alt="" loading="lazy"></span><span>Fader</span></a><a class="rel-card" href="../controls/levelmeter.html"><span class="thumb"><img src="../img/graphite/level-meter.png" data-shot="level-meter" alt="" loading="lazy"></span><span>LevelMeter</span></a><a class="rel-card" href="../controls/trackheader.html"><span class="thumb"><img src="../img/graphite/track-header.png" data-shot="track-header" alt="" loading="lazy"></span><span>TrackHeader</span></a><a class="rel-card" href="../controls/ledtogglebutton.html"><span class="thumb"><img src="../img/graphite/led-buttons.png" data-shot="led-buttons" alt="" loading="lazy"></span><span>LedToggleButton</span></a></div>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#overview">Overview</a></li><li class="l2"><a href="#quick-start">Quick start</a></li><li class="l2"><a href="#examples">Examples</a></li><li class="l3"><a href="#a-mixer-from-a-collection">A mixer from a collection</a></li><li class="l3"><a href="#busses-and-the-master">Busses and the master</a></li><li class="l2"><a href="#xaml-of-the-screenshot">XAML of the screenshot</a></li><li class="l2"><a href="#mouse-and-keyboard">Mouse and keyboard</a></li><li class="l2"><a href="#api-reference">API reference</a></li><li class="l3"><a href="#properties">Properties</a></li><li class="l3"><a href="#methods">Methods</a></li><li class="l2"><a href="#related-controls">Related controls</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ValueScale · nDAWControls</title>
+<meta name="description" content="ValueScale: Tick marks and labels for a fader or meter, using the same taper so the ticks line up exactly. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:title" content="ValueScale · nDAWControls">
+<meta property="og:description" content="ValueScale: Tick marks and labels for a fader or meter, using the same taper so the ticks line up exactly. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html">Getting started</a></li><li><a href="../guide/concepts.html">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html">MVVM and binding</a></li><li><a href="../guide/skins.html">Skins</a></li><li><a href="../guide/recipes.html">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html" aria-current="page">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs"><a href="../controls/index.html">Controls</a> / Metering</div><h1>ValueScale</h1><p class="lede">Tick marks and labels for a fader or meter, using the same taper so the ticks line up exactly.</p><div class="head-row"><code class="cls">&lt;daw:ValueScale&gt;</code><div class="skin-tabs" role="group" aria-label="Skin of the screenshots"><span>Skin</span><button type="button" class="skin-dot" data-skin="graphite" title="Graphite" aria-label="Graphite skin" style="--dot:#ff8a2a"></button><button type="button" class="skin-dot" data-skin="studio" title="Studio" aria-label="Studio skin" style="--dot:#4ea1ff"></button><button type="button" class="skin-dot" data-skin="lightclassic" title="Light classic" aria-label="Light classic skin" style="--dot:#2f7de1"></button><button type="button" class="skin-dot" data-skin="retrohardware" title="Retro hardware" aria-label="Retro hardware skin" style="--dot:#ff9a3c"></button><button type="button" class="skin-dot" data-skin="highcontrast" title="High contrast" aria-label="High contrast skin" style="--dot:#ffd400"></button><span class="skin-name">Graphite</span></div></div></div><section><h2 id="overview"><a class="anchor" href="#overview">#</a>Overview</h2>
+<p><code>ValueScale</code> draws ticks and labels for the values you list in <code>Ticks</code>. Give it the same <code>Minimum</code>, <code>Maximum</code> and <code>Taper</code> as the control next to it, and use <code>Padding</code> to match where that control&#x27;s travel starts and ends.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/fader-with-scale-and-meter.png" data-shot="fader-with-scale-and-meter" width="110" height="288" alt="A dB scale (left) lined up with a fader and a meter." decoding="async"></div><figcaption>A dB scale (left) lined up with a fader and a meter.</figcaption></figure><div class="usefor"><h4>Use it for</h4><ul><li>dB scales next to faders and meters, frequency or percent scales next to horizontal controls</li></ul></div>
+</section>
+<section><h2 id="quick-start"><a class="anchor" href="#quick-start">#</a>Quick start</h2>
+<p></p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:ValueScale Placement=&quot;End&quot; Minimum=&quot;-60&quot; Maximum=&quot;0&quot; Taper=&quot;Decibel&quot; MinimumText=&quot;-∞&quot;
+                Ticks=&quot;0 -3 -6 -12 -20 -30 -60&quot; LabelFormat=&quot;{}{0:0}&quot;/&gt;</code></pre></div>
+</section>
+<section><h2 id="examples"><a class="anchor" href="#examples">#</a>Examples</h2>
+<h3 id="horizontal-scale"><a class="anchor" href="#horizontal-scale">#</a>Horizontal scale</h3><p></p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:ValueScale Orientation=&quot;Horizontal&quot; Placement=&quot;Start&quot; Minimum=&quot;0&quot; Maximum=&quot;100&quot; Height=&quot;22&quot;
+                Ticks=&quot;0 25 50 75 100&quot; LabelFormat=&quot;{}{0}%&quot;/&gt;</code></pre></div>
+</section>
+<section><h2 id="xaml-of-the-screenshot"><a class="anchor" href="#xaml-of-the-screenshot">#</a>XAML of the screenshot</h2>
+<p>This is the exact XAML of the screenshot at the top. The gallery app shows it live, so you can edit it and press Ctrl+Enter to see your change.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">Gallery: Fader with scale and meter</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;daw:ValueScale Placement=&quot;End&quot; Padding=&quot;0,20,0,20&quot; Minimum=&quot;-60&quot; Maximum=&quot;0&quot; Taper=&quot;Decibel&quot;
+                    MinimumText=&quot;-∞&quot; Ticks=&quot;0 -3 -6 -12 -20 -30 -60&quot;/&gt;
+    &lt;daw:Fader x:Name=&quot;fader&quot; Width=&quot;30&quot; Height=&quot;240&quot; Taper=&quot;Decibel&quot; Minimum=&quot;-60&quot; Maximum=&quot;0&quot; Value=&quot;-4&quot;
+               ShowValueText=&quot;False&quot; MinimumText=&quot;-∞&quot;/&gt;
+    &lt;daw:LevelMeter x:Name=&quot;meter&quot; Width=&quot;8&quot; Margin=&quot;4,20,0,20&quot;/&gt;
+&lt;/StackPanel&gt;</code></pre></div>
+</section>
+<section><h2 id="tips"><a class="anchor" href="#tips">#</a>Tips</h2>
+<ul><li><code>Placement</code> is the side the ticks are on: <code>Start</code>, <code>End</code> or <code>Both</code>.</li><li>Fader caps are 40 pixels high, so <code>Padding=&quot;0,20,0,20&quot;</code> lines a vertical scale up with a fader of the same height.</li></ul>
+</section>
+<section><h2 id="api-reference"><a class="anchor" href="#api-reference">#</a>API reference</h2>
+<h3 id="properties"><a class="anchor" href="#properties">#</a>Properties</h3><div class="table-wrap"><table class="api"><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">Minimum</code></td><td><code>double</code></td><td><code>-70</code></td><td>Value at the bottom (or left) end.</td></tr><tr><td><code class="pn">Maximum</code></td><td><code>double</code></td><td><code>6</code></td><td>Value at the top (or right) end.</td></tr><tr><td><code class="pn">Taper</code></td><td><code>ValueTaper</code></td><td><code>Linear</code></td><td>Mapping from value to position; use the same taper as the control the scale belongs to.</td></tr><tr><td><code class="pn">Ticks</code></td><td><code>DoubleCollection</code></td><td><code>null</code></td><td>Values to label, e.g. <code>Ticks=&quot;6 0 -6 -12 -24 -48 -70&quot;</code>.</td></tr><tr><td><code class="pn">Orientation</code></td><td><code>Orientation</code></td><td><code>Vertical</code></td><td>Vertical (default) or horizontal.</td></tr><tr><td><code class="pn">Placement</code></td><td><code>ScaleTickPlacement</code></td><td><code>Start</code></td><td>Side of the scale the ticks are on.</td></tr><tr><td><code class="pn">TickLength</code></td><td><code>double</code></td><td><code>4</code></td><td>Length of the tick marks in pixels.</td></tr><tr><td><code class="pn">LabelFormat</code></td><td><code>string</code></td><td><code>&quot;{0:0}&quot;</code></td><td>Format of the labels, for example &quot;{0:0}&quot; or &quot;{0:0.0} dB&quot;.</td></tr><tr><td><code class="pn">MinimumText</code></td><td><code>string</code></td><td><code>null</code></td><td>Label used for a tick at <code>Minimum</code> (e.g. &quot;-∞&quot;).</td></tr></tbody></table></div>
+<details class="brushes"><summary>Colour properties (1)</summary><p>Each one is set by the skin. Set it on one control to override the skin for that control only.</p><div class="table-wrap"><table class="api"><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">TickBrush</code></td><td>Brush for the ticks and labels.</td></tr></tbody></table></div></details>
+</section>
+<section><h2 id="related-controls"><a class="anchor" href="#related-controls">#</a>Related controls</h2>
+<div class="rel-grid"><a class="rel-card" href="../controls/fader.html"><span class="thumb"><img src="../img/graphite/fader.png" data-shot="fader" alt="" loading="lazy"></span><span>Fader</span></a><a class="rel-card" href="../controls/levelmeter.html"><span class="thumb"><img src="../img/graphite/level-meter.png" data-shot="level-meter" alt="" loading="lazy"></span><span>LevelMeter</span></a><a class="rel-card" href="../controls/channelstrip.html"><span class="thumb"><img src="../img/graphite/channel-strip.png" data-shot="channel-strip" alt="" loading="lazy"></span><span>ChannelStrip</span></a></div>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#overview">Overview</a></li><li class="l2"><a href="#quick-start">Quick start</a></li><li class="l2"><a href="#examples">Examples</a></li><li class="l3"><a href="#horizontal-scale">Horizontal scale</a></li><li class="l2"><a href="#xaml-of-the-screenshot">XAML of the screenshot</a></li><li class="l2"><a href="#tips">Tips</a></li><li class="l2"><a href="#api-reference">API reference</a></li><li class="l3"><a href="#properties">Properties</a></li><li class="l2"><a href="#related-controls">Related controls</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

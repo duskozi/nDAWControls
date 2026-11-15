@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PerformanceWheel · nDAWControls</title>
+<meta name="description" content="PerformanceWheel: Hardware-style pitch-bend and modulation wheels. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:title" content="PerformanceWheel · nDAWControls">
+<meta property="og:description" content="PerformanceWheel: Hardware-style pitch-bend and modulation wheels. XAML and C# examples for the nDAWControls WPF library.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html">Getting started</a></li><li><a href="../guide/concepts.html">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html">MVVM and binding</a></li><li><a href="../guide/skins.html">Skins</a></li><li><a href="../guide/recipes.html">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html" aria-current="page">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs"><a href="../controls/index.html">Controls</a> / Piano</div><h1>PerformanceWheel</h1><p class="lede">Hardware-style pitch-bend and modulation wheels.</p><div class="head-row"><code class="cls">&lt;daw:PerformanceWheel&gt;</code><div class="skin-tabs" role="group" aria-label="Skin of the screenshots"><span>Skin</span><button type="button" class="skin-dot" data-skin="graphite" title="Graphite" aria-label="Graphite skin" style="--dot:#ff8a2a"></button><button type="button" class="skin-dot" data-skin="studio" title="Studio" aria-label="Studio skin" style="--dot:#4ea1ff"></button><button type="button" class="skin-dot" data-skin="lightclassic" title="Light classic" aria-label="Light classic skin" style="--dot:#2f7de1"></button><button type="button" class="skin-dot" data-skin="retrohardware" title="Retro hardware" aria-label="Retro hardware skin" style="--dot:#ff9a3c"></button><button type="button" class="skin-dot" data-skin="highcontrast" title="High contrast" aria-label="High contrast skin" style="--dot:#ffd400"></button><span class="skin-name">Graphite</span></div></div></div><section><h2 id="overview"><a class="anchor" href="#overview">#</a>Overview</h2>
+<p><code>PerformanceWheel</code> is drawn as a ribbed cylinder in a slot. In <code>PitchBend</code> mode the value goes from -8192 to 8191 and the wheel springs back to the centre when released; in <code>Modulation</code> mode it goes from 0 to 127 and stays where it is left.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/wheels-and-pedals.png" data-shot="wheels-and-pedals" width="170" height="158" alt="A pitch-bend wheel, a modulation wheel and the piano pedals." decoding="async"></div><figcaption>A pitch-bend wheel, a modulation wheel and the piano pedals.</figcaption></figure>
+</section>
+<section><h2 id="quick-start"><a class="anchor" href="#quick-start">#</a>Quick start</h2>
+<p></p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;daw:PerformanceWheel x:Name=&quot;pitch&quot; Mode=&quot;PitchBend&quot; Height=&quot;110&quot;/&gt;
+    &lt;daw:PerformanceWheel x:Name=&quot;mod&quot; Mode=&quot;Modulation&quot; Height=&quot;110&quot; Margin=&quot;6,0,0,0&quot;/&gt;
+&lt;/StackPanel&gt;</code></pre></div><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">pitch.ValueChanged += (s, e) =&gt; midiOut.PitchBend(0, e.NewValue);        // -8192..8191
+mod.ValueChanged   += (s, e) =&gt; midiOut.ControlChange(0, 1, e.NewValue);  // CC 1, 0..127</code></pre></div>
+</section>
+<section><h2 id="examples"><a class="anchor" href="#examples">#</a>Examples</h2>
+<h3 id="showing-incoming-midi"><a class="anchor" href="#showing-incoming-midi">#</a>Showing incoming MIDI</h3><p>Setting <code>Value</code> from code moves the wheel and raises <code>ValueChanged</code> too, so guard against sending it back:</p><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">bool fromInput;
+void OnMidiPitchBend(int value) =&gt; Dispatcher.BeginInvoke(() =&gt;
+{
+    fromInput = true; pitch.Value = value; fromInput = false;
+});
+pitch.ValueChanged += (s, e) =&gt; { if (!fromInput) midiOut.PitchBend(0, e.NewValue); };</code></pre></div><h3 id="a-wheel-that-stays"><a class="anchor" href="#a-wheel-that-stays">#</a>A wheel that stays</h3><p></p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:PerformanceWheel Mode=&quot;PitchBend&quot; SpringReturn=&quot;False&quot; Label=&quot;BEND&quot;/&gt;</code></pre></div>
+</section>
+<section><h2 id="xaml-of-the-screenshot"><a class="anchor" href="#xaml-of-the-screenshot">#</a>XAML of the screenshot</h2>
+<p>This is the exact XAML of the screenshot at the top. The gallery app shows it live, so you can edit it and press Ctrl+Enter to see your change.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">Gallery: Wheels and pedals</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;daw:PerformanceWheel Mode=&quot;PitchBend&quot; Height=&quot;110&quot;/&gt;
+    &lt;daw:PerformanceWheel Mode=&quot;Modulation&quot; Height=&quot;110&quot; Margin=&quot;6,0,0,0&quot;/&gt;
+    &lt;daw:PianoPedals Margin=&quot;24,0,0,0&quot; VerticalAlignment=&quot;Bottom&quot; SustainValue=&quot;127&quot;/&gt;
+&lt;/StackPanel&gt;</code></pre></div>
+</section>
+<section><h2 id="mouse-and-keyboard"><a class="anchor" href="#mouse-and-keyboard">#</a>Mouse and keyboard</h2>
+<div class="table-wrap"><table class="kbd-table"><thead><tr><th>Input</th><th>What it does</th></tr></thead><tbody><tr><td>Drag up or down</td><td>Moves the wheel (Shift for fine)</td></tr><tr><td>Mouse wheel / Up and Down keys</td><td>Steps</td></tr><tr><td>Release (pitch bend)</td><td>Springs back to the centre</td></tr><tr><td>Double-click, Home or Delete</td><td>Back to the rest position</td></tr></tbody></table></div>
+</section>
+<section><h2 id="api-reference"><a class="anchor" href="#api-reference">#</a>API reference</h2>
+<h3 id="properties"><a class="anchor" href="#properties">#</a>Properties</h3><div class="table-wrap"><table class="api"><thead><tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">Mode</code></td><td><code>WheelMode</code></td><td><code>PitchBend</code></td><td>Pitch bend (springs back to the centre) or modulation (stays where it is left).</td></tr><tr><td><code class="pn">Value</code></td><td><code>int</code></td><td><code>0</code></td><td>Pitch bend: -8192..8191. Modulation: 0..127.</td></tr><tr><td><code class="pn">SpringReturn</code></td><td><code>bool</code></td><td><code>true</code></td><td>Pitch-bend mode only: return to centre on release (like a real spring-loaded wheel).</td></tr><tr><td><code class="pn">DragSensitivity</code></td><td><code>double</code></td><td><code>140</code></td><td>Pixels of vertical mouse travel for the full range.</td></tr><tr><td><code class="pn">Label</code></td><td><code>string</code></td><td><code>null</code></td><td>Caption under the wheel (&quot;PB&quot;, &quot;MOD&quot;). Null = derived from <code>Mode</code>; empty = none.</td></tr></tbody></table></div>
+<details class="brushes"><summary>Colour properties (4)</summary><p>Each one is set by the skin. Set it on one control to override the skin for that control only.</p><div class="table-wrap"><table class="api"><thead><tr><th>Property</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">SlotBrush</code></td><td>Brush for the slot around the wheel.</td></tr><tr><td><code class="pn">WheelBrush</code></td><td>Brush for the wheel body.</td></tr><tr><td><code class="pn">RibBrush</code></td><td>Brush for the ribs of the wheel.</td></tr><tr><td><code class="pn">MarkerBrush</code></td><td>Brush for the centre marker.</td></tr></tbody></table></div></details>
+<h3 id="events"><a class="anchor" href="#events">#</a>Events</h3><div class="table-wrap"><table class="api"><thead><tr><th>Event</th><th>Handler</th><th>Description</th></tr></thead><tbody><tr><td><code class="pn">ValueChanged</code></td><td><code>RoutedPropertyChangedEventHandler&lt;int&gt;</code></td><td>Raised for every value change (drag, spring-back, binding). Send the MIDI message from here.</td></tr><tr><td><code class="pn">DragStarted</code></td><td><code>RoutedEventHandler</code></td><td>Raised when the user grabs the wheel.</td></tr><tr><td><code class="pn">DragCompleted</code></td><td><code>RoutedEventHandler</code></td><td>Raised when the user lets go of the wheel (a pitch wheel then springs back).</td></tr></tbody></table></div>
+</section>
+<section><h2 id="related-controls"><a class="anchor" href="#related-controls">#</a>Related controls</h2>
+<div class="rel-grid"><a class="rel-card" href="../controls/pianokeyboard.html"><span class="thumb"><img src="../img/graphite/piano-keyboard.png" data-shot="piano-keyboard" alt="" loading="lazy"></span><span>PianoKeyboard</span></a><a class="rel-card" href="../controls/pianopedals.html"><span class="thumb"><img src="../img/graphite/wheels-and-pedals.png" data-shot="wheels-and-pedals" alt="" loading="lazy"></span><span>PianoPedals</span></a></div>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#overview">Overview</a></li><li class="l2"><a href="#quick-start">Quick start</a></li><li class="l2"><a href="#examples">Examples</a></li><li class="l3"><a href="#showing-incoming-midi">Showing incoming MIDI</a></li><li class="l3"><a href="#a-wheel-that-stays">A wheel that stays</a></li><li class="l2"><a href="#xaml-of-the-screenshot">XAML of the screenshot</a></li><li class="l2"><a href="#mouse-and-keyboard">Mouse and keyboard</a></li><li class="l2"><a href="#api-reference">API reference</a></li><li class="l3"><a href="#properties">Properties</a></li><li class="l3"><a href="#events">Events</a></li><li class="l2"><a href="#related-controls">Related controls</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

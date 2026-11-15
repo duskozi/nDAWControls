@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skins · nDAWControls</title>
+<meta name="description" content="The five built-in skins of nDAWControls, switching skins at runtime, skin keys and making your own skin.">
+<meta property="og:title" content="Skins · nDAWControls">
+<meta property="og:description" content="The five built-in skins of nDAWControls, switching skins at runtime, skin keys and making your own skin.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html">Getting started</a></li><li><a href="../guide/concepts.html">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html">MVVM and binding</a></li><li><a href="../guide/skins.html" aria-current="page">Skins</a></li><li><a href="../guide/recipes.html">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs">Guide</div><h1>Skins</h1><p class="lede">Five built-in skins, switchable while the app runs, for the whole app or one panel. And your own skin from a copy of a file.</p></div><section><h2 id="the-built-in-skins"><a class="anchor" href="#the-built-in-skins">#</a>The built-in skins</h2>
+<h3 id="skin-graphite"><a class="anchor" href="#skin-graphite">#</a><code>DawSkin.Graphite</code></h3><p>Dark graphite with an orange accent. The default.</p><figure class="shot"><div class="shot-frame"><img src="../img/graphite/gallery-studio-demo.png" width="1084" height="749" alt="The studio demo in the Graphite skin" loading="lazy"></div></figure><h3 id="skin-studio"><a class="anchor" href="#skin-studio">#</a><code>DawSkin.Studio</code></h3><p>Dark blue-grey with a blue accent.</p><figure class="shot"><div class="shot-frame"><img src="../img/studio/gallery-studio-demo.png" width="1084" height="749" alt="The studio demo in the Studio skin" loading="lazy"></div></figure><h3 id="skin-lightclassic"><a class="anchor" href="#skin-lightclassic">#</a><code>DawSkin.LightClassic</code></h3><p>Light grey with a blue accent and light knobs.</p><figure class="shot"><div class="shot-frame"><img src="../img/lightclassic/gallery-studio-demo.png" width="1084" height="749" alt="The studio demo in the LightClassic skin" loading="lazy"></div></figure><h3 id="skin-retrohardware"><a class="anchor" href="#skin-retrohardware">#</a><code>DawSkin.RetroHardware</code></h3><p>Warm dark brown with orange accents and amber displays.</p><figure class="shot"><div class="shot-frame"><img src="../img/retrohardware/gallery-studio-demo.png" width="1084" height="749" alt="The studio demo in the RetroHardware skin" loading="lazy"></div></figure><h3 id="skin-highcontrast"><a class="anchor" href="#skin-highcontrast">#</a><code>DawSkin.HighContrast</code></h3><p>Black and white with a yellow accent and strong outlines.</p><figure class="shot"><div class="shot-frame"><img src="../img/highcontrast/gallery-studio-demo.png" width="1084" height="749" alt="The studio demo in the HighContrast skin" loading="lazy"></div></figure>
+</section>
+<section><h2 id="switching-skins"><a class="anchor" href="#switching-skins">#</a>Switching skins</h2>
+<p>For the whole app:</p><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">using nDAWControls.Skinning;
+
+SkinManager.Apply(DawSkin.Studio);
+
+SkinManager.SkinChanged += (s, e) =&gt; Debug.WriteLine(SkinManager.CurrentSkin);</code></pre></div><p>A skin picker in a settings window:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;ComboBox x:Name=&quot;skinPicker&quot; SelectionChanged=&quot;OnSkinChanged&quot;/&gt;</code></pre></div><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">skinPicker.ItemsSource  = Enum.GetValues&lt;DawSkin&gt;();
+skinPicker.SelectedItem = SkinManager.CurrentSkin ?? DawSkin.Graphite;
+
+void OnSkinChanged(object sender, SelectionChangedEventArgs e)
+{
+    if (skinPicker.SelectedItem is DawSkin skin) SkinManager.Apply(skin);
+}</code></pre></div>
+</section>
+<section><h2 id="a-skin-for-one-part-of-a-window"><a class="anchor" href="#a-skin-for-one-part-of-a-window">#</a>A skin for one part of a window</h2>
+<p>Set the attached property <code>SkinManager.Skin</code> on any element to skin its subtree independently, for example a dark mixer in a light app:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;Border daw:SkinManager.Skin=&quot;Graphite&quot;&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+        &lt;daw:ChannelStrip TrackName=&quot;Drums&quot;/&gt;
+        &lt;daw:ChannelStrip TrackName=&quot;Bass&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Border&gt;</code></pre></div><p>Or merge a skin in XAML yourself:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;Application.Resources&gt;
+    &lt;ResourceDictionary&gt;
+        &lt;ResourceDictionary.MergedDictionaries&gt;
+            &lt;ResourceDictionary Source=&quot;pack://application:,,,/nDAWControls;component/Skins/RetroHardware.xaml&quot;/&gt;
+        &lt;/ResourceDictionary.MergedDictionaries&gt;
+    &lt;/ResourceDictionary&gt;
+&lt;/Application.Resources&gt;</code></pre></div>
+</section>
+<section><h2 id="using-skin-colours-in-your-own-ui"><a class="anchor" href="#using-skin-colours-in-your-own-ui">#</a>Using skin colours in your own UI</h2>
+<p>Every colour of a skin is a resource key in <code>DawSkinKeys</code>. Use them with <code>DynamicResource</code> and your windows follow the skin too:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;Window Background=&quot;{DynamicResource {x:Static daw:DawSkinKeys.WindowBackground}}&quot;
+        TextElement.Foreground=&quot;{DynamicResource {x:Static daw:DawSkinKeys.Text}}&quot;
+        TextElement.FontFamily=&quot;{DynamicResource {x:Static daw:DawSkinKeys.FontFamily}}&quot;&gt;
+
+    &lt;Border Background=&quot;{DynamicResource {x:Static daw:DawSkinKeys.PanelBackground}}&quot;
+            BorderBrush=&quot;{DynamicResource {x:Static daw:DawSkinKeys.PanelBorder}}&quot; BorderThickness=&quot;1&quot;&gt;
+        &lt;TextBlock Text=&quot;SYNTH&quot; Foreground=&quot;{DynamicResource {x:Static daw:DawSkinKeys.TextDim}}&quot;/&gt;
+    &lt;/Border&gt;
+&lt;/Window&gt;</code></pre></div><div class="callout"><span class="ci">i</span><div>Use <code>DynamicResource</code>, not <code>StaticResource</code>. Only dynamic references follow a skin change.</div></div>
+</section>
+<section><h2 id="changing-a-few-colours"><a class="anchor" href="#changing-a-few-colours">#</a>Changing a few colours</h2>
+<p>Override single keys in your own resources. They win over the skin:</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;Application.Resources&gt;
+    &lt;SolidColorBrush x:Key=&quot;{x:Static daw:DawSkinKeys.Accent}&quot;  Color=&quot;#FF00C2A8&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;{x:Static daw:DawSkinKeys.LedSolo}&quot; Color=&quot;#FF4CC2FF&quot;/&gt;
+&lt;/Application.Resources&gt;</code></pre></div>
+</section>
+<section><h2 id="making-your-own-skin"><a class="anchor" href="#making-your-own-skin">#</a>Making your own skin</h2>
+<ol class="steps"><li><h3 id="copy-a-skin-file"><a class="anchor" href="#copy-a-skin-file">#</a>Copy a skin file</h3><p>Copy one of the files in <a href="https://github.com/duskozi/nDAWControls/tree/main/src/nDAWControls/Skins">src/nDAWControls/Skins</a> into your app, for example as <code>Skins/Ocean.xaml</code>, with build action <strong>Page</strong>.</p></li><li><h3 id="change-the-colours"><a class="anchor" href="#change-the-colours">#</a>Change the colours</h3><p>Edit the colours. Change <code>xmlns:skin</code> to <code>clr-namespace:nDAWControls.Skinning;assembly=nDAWControls</code>, because the file now lives in your assembly.</p></li><li><h3 id="apply-it"><a class="anchor" href="#apply-it">#</a>Apply it</h3><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">SkinManager.Apply(new Uri(&quot;pack://application:,,,/MyApp;component/Skins/Ocean.xaml&quot;));</code></pre></div></li><li><h3 id="check-it"><a class="anchor" href="#check-it">#</a>Check it</h3><p><code>SkinManager.FindMissingKeys</code> lists the keys your dictionary doesn&#x27;t define, which is handy in a unit test:</p><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">var skin = new ResourceDictionary { Source = new Uri(&quot;pack://application:,,,/MyApp;component/Skins/Ocean.xaml&quot;) };
+Assert.Empty(SkinManager.FindMissingKeys(skin));</code></pre></div></li></ol><p>Frames, LEDs and notes drawn by the nine-patch renderer are generated from these colours, so they follow automatically.</p>
+</section>
+<section><h2 id="skin-keys"><a class="anchor" href="#skin-keys">#</a>Skin keys</h2>
+<p>The most used keys, by area. Every skin defines all of them; see a skin file for the complete list with values.</p><div class="table-wrap"><table><thead><tr><th>Area</th><th>Keys</th></tr></thead><tbody><tr><td>Window and text</td><td><code>WindowBackground</code>, <code>PanelBackground</code>, <code>PanelRaised</code>, <code>PanelBorder</code>, <code>Text</code>, <code>TextDim</code>, <code>Accent</code>, <code>AccentForeground</code>, <code>Focus</code></td></tr><tr><td>Knobs</td><td><code>KnobBody</code>, <code>KnobBodyBorder</code>, <code>KnobTrack</code>, <code>KnobIndicator</code>, <code>KnobArcThickness</code></td></tr><tr><td>Faders</td><td><code>FaderGroove</code>, <code>FaderFill</code>, <code>FaderThumb</code>, <code>FaderThumbBorder</code>, <code>FaderThumbLine</code></td></tr><tr><td>Meters and scales</td><td><code>MeterBackground</code>, <code>MeterSafe</code>, <code>MeterWarning</code>, <code>MeterDanger</code>, <code>MeterPeakHold</code>, <code>MeterClipOn</code>, <code>MeterClipOff</code>, <code>ScaleTick</code>, <code>ScaleText</code></td></tr><tr><td>Buttons and LEDs</td><td><code>ButtonBackground</code>, <code>ButtonHover</code>, <code>ButtonPressed</code>, <code>ButtonBorder</code>, <code>LedMute</code>, <code>LedSolo</code>, <code>LedArm</code>, <code>LedMonitor</code>, <code>LedLitForeground</code>, <code>TransportPlay</code>, <code>TransportRecord</code></td></tr><tr><td>Displays</td><td><code>LcdBackground</code>, <code>LcdBorder</code>, <code>LcdText</code>, <code>LcdTextDim</code>, <code>LcdFontFamily</code></td></tr><tr><td>Keyboard</td><td><code>KeyWhite</code>, <code>KeyBlack</code>, <code>KeyBorder</code>, <code>KeyPressed</code>, <code>KeyHighlight</code></td></tr><tr><td>Piano roll</td><td><code>GridBackground</code>, <code>GridBlackRow</code>, <code>GridBarLine</code>, <code>GridBeatLine</code>, <code>GridSubLine</code>, <code>NoteFill</code>, <code>NoteSelectedFill</code>, <code>NoteBorder</code>, <code>NoteText</code>, <code>Playhead</code>, <code>RulerBackground</code>, <code>RulerText</code>, <code>Selection</code></td></tr><tr><td>Step sequencer</td><td><code>StepOff</code>, <code>StepOn</code>, <code>StepGroupBackground</code>, <code>StepPlayhead</code></td></tr><tr><td>XY pad and envelope</td><td><code>PadBackground</code>, <code>PadGrid</code>, <code>PadPuck</code>, <code>PadCrosshair</code>, <code>EnvelopeStroke</code>, <code>EnvelopeFill</code></td></tr><tr><td>Wheels and pedals</td><td><code>WheelSlot</code>, <code>WheelBody</code>, <code>WheelRib</code>, <code>WheelMarker</code>, <code>PedalBody</code>, <code>PedalLit</code></td></tr><tr><td>MIDI activity, tracks and lanes</td><td><code>ActivityNote</code>, <code>ActivityControl</code>, <code>ActivityOff</code>, <code>ActivityRowAlt</code>, <code>TrackSelected</code>, <code>LaneValue</code>, <code>LaneFill</code></td></tr><tr><td>Shape and fonts</td><td><code>CornerRadius</code>, <code>FontFamily</code></td></tr></tbody></table></div>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#the-built-in-skins">The built-in skins</a></li><li class="l2"><a href="#switching-skins">Switching skins</a></li><li class="l2"><a href="#a-skin-for-one-part-of-a-window">A skin for one part of a window</a></li><li class="l2"><a href="#using-skin-colours-in-your-own-ui">Using skin colours in your own UI</a></li><li class="l2"><a href="#changing-a-few-colours">Changing a few colours</a></li><li class="l2"><a href="#making-your-own-skin">Making your own skin</a></li><li class="l3"><a href="#copy-a-skin-file">Copy a skin file</a></li><li class="l3"><a href="#change-the-colours">Change the colours</a></li><li class="l3"><a href="#apply-it">Apply it</a></li><li class="l3"><a href="#check-it">Check it</a></li><li class="l2"><a href="#skin-keys">Skin keys</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>

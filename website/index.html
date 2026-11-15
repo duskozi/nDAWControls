@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nDAWControls · WPF controls for DAW and MIDI apps</title>
+<meta name="description" content="WPF controls for DAW and MIDI apps: knobs, faders, meters, channel strips, transport, piano keyboard, piano roll and step sequencer, with five live-switchable skins. Free and MIT licensed.">
+<meta property="og:title" content="nDAWControls · WPF controls for DAW and MIDI apps">
+<meta property="og:description" content="WPF controls for DAW and MIDI apps: knobs, faders, meters, channel strips, transport, piano keyboard, piano roll and step sequencer, with five live-switchable skins. Free and MIT licensed.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="home">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="guide/getting-started.html">Guide</a>
+    <a href="controls/index.html">Controls</a>
+    <a href="guide/skins.html">Skins</a>
+    <a href="guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="index.html" aria-current="page">Introduction</a></li><li><a href="guide/getting-started.html">Getting started</a></li><li><a href="guide/concepts.html">Core concepts</a></li><li><a href="guide/threading.html">Threading and real-time data</a></li><li><a href="guide/mvvm.html">MVVM and binding</a></li><li><a href="guide/skins.html">Skins</a></li><li><a href="guide/recipes.html">Recipes</a></li><li><a href="guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="controls/knob.html">Knob</a></li><li><a href="controls/fader.html">Fader</a></li><li><a href="controls/valuebox.html">ValueBox</a></li><li><a href="controls/xypad.html">XYPad</a></li><li><a href="controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="controls/levelmeter.html">LevelMeter</a></li><li><a href="controls/valuescale.html">ValueScale</a></li><li><a href="controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="controls/transportbutton.html">TransportButton</a></li><li><a href="controls/transportbar.html">TransportBar</a></li><li><a href="controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="controls/channelstrip.html">ChannelStrip</a></li><li><a href="controls/trackheader.html">TrackHeader</a></li><li><a href="controls/dawpanel.html">DawPanel</a></li><li><a href="controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="controls/performancewheel.html">PerformanceWheel</a></li><li><a href="controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="controls/pianoroll.html">PianoRoll</a></li><li><a href="controls/controllerlane.html">ControllerLane</a></li><li><a href="controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+
+<section class="hero">
+  <span class="eyebrow"><b>●</b> v1.0.2 · .NET 8 and .NET 10 · MIT</span>
+  <h1>WPF controls for <em>DAW</em> and <em>MIDI</em> apps</h1>
+  <p class="lede">Knobs, faders, meters, a mixer channel strip, a transport bar, a piano keyboard, a piano roll and a step sequencer.
+  Real-time ready, five live-switchable skins, and plain WPF you already know.</p>
+  <div class="cta">
+    <a class="btn primary" href="guide/getting-started.html">Get started</a>
+    <a class="btn ghost" href="controls/index.html">Browse the controls</a>
+  </div>
+  <div class="install"><span>&gt;</span><code>dotnet add package nDAWControls</code><button class="copy" type="button">Copy</button></div>
+  <div class="hero-tabs"><div class="skin-tabs" role="group" aria-label="Skin of the screenshots"><span>Skin</span><button type="button" class="skin-dot" data-skin="graphite" title="Graphite" aria-label="Graphite skin" style="--dot:#ff8a2a"></button><button type="button" class="skin-dot" data-skin="studio" title="Studio" aria-label="Studio skin" style="--dot:#4ea1ff"></button><button type="button" class="skin-dot" data-skin="lightclassic" title="Light classic" aria-label="Light classic skin" style="--dot:#2f7de1"></button><button type="button" class="skin-dot" data-skin="retrohardware" title="Retro hardware" aria-label="Retro hardware skin" style="--dot:#ff9a3c"></button><button type="button" class="skin-dot" data-skin="highcontrast" title="High contrast" aria-label="High contrast skin" style="--dot:#ffd400"></button><span class="skin-name">Graphite</span></div></div>
+  <div class="hero-shot"><figure class="shot "><div class="shot-frame"><img src="img/graphite/gallery-studio-demo.png" data-shot="gallery-studio-demo" width="1084" height="749" alt="The studio demo of the nDAWControls gallery: mixer, piano roll, step sequencer, synth panel and keyboard" decoding="async"></div></figure></div>
+</section>
+<section class="band">
+  <div class="band-inner">
+    <h2>Everything a music app needs</h2>
+    <p class="sub">The controls come from nMIDI Editor, where they draw the mixer, the piano roll and the keyboard. They are tested in a real app.</p>
+    <div class="features"><div class="feature"><div class="fi"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div><h3>21 controls</h3><p>Knobs, faders, meters, channel strips, transport, piano keyboard, piano roll, controller lane, step sequencer, XY pad, envelope editor, wheels and pedals.</p></div><div class="feature"><div class="fi"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3>Five skins, switched live</h3><p>Graphite, Studio, Light classic, Retro hardware and High contrast. One line of code changes the whole app, or just one panel.</p></div><div class="feature"><div class="fi"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Built for real-time audio</h3><p>Meters and MIDI lights take values from any thread without locks, and draw once per frame with the newest data.</p></div><div class="feature"><div class="fi"><svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg></div><h3>Mouse, wheel and keyboard</h3><p>Everything takes focus. Arrow keys, double-click to default, Shift for fine steps, computer-keyboard piano.</p></div><div class="feature"><div class="fi"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg></div><h3>Fast drawing</h3><p>A native nine-patch renderer draws the frames, and equal frames share one cached bitmap. Long songs stay smooth.</p></div><div class="feature"><div class="fi"><svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg></div><h3>Plain WPF</h3><p>Lookless controls with dependency properties, routed events and commands. Bind them in MVVM like any WPF control.</p></div></div>
+    <div class="stats"><div><b>21</b><span>controls</span></div><div><b>5</b><span>skins</span></div><div><b>87</b><span>skin colour keys</span></div><div><b>0</b><span>locks on the audio thread</span></div></div>
+  </div>
+</section>
+<section class="band alt">
+  <div class="band-inner split">
+    <div>
+      <h3>Four lines to a working panel</h3>
+      <p>Add the package, add the <code>daw</code> namespace, and use the controls in XAML. Value controls are WPF range controls,
+      so <code>Value</code>, <code>Minimum</code>, <code>Maximum</code> and binding work as you expect. Meters take levels from any thread.</p>
+      <p><a href="guide/getting-started.html">Read the getting-started guide →</a></p>
+    </div>
+    <div><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">MainWindow.xaml</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;Window xmlns:daw=&quot;urn:ndaw-controls&quot; ...&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+        &lt;daw:Knob Label=&quot;Cutoff&quot; Taper=&quot;Log&quot; Minimum=&quot;20&quot; Maximum=&quot;20000&quot; Value=&quot;{Binding Cutoff}&quot;
+                  ValueFormatter=&quot;{x:Static daw:ValueFormatters.Frequency}&quot;/&gt;
+        &lt;daw:Fader Height=&quot;200&quot; Taper=&quot;Decibel&quot; Minimum=&quot;-60&quot; Maximum=&quot;6&quot; Value=&quot;{Binding VolumeDb}&quot;/&gt;
+        &lt;daw:LevelMeter x:Name=&quot;meter&quot; Width=&quot;8&quot;/&gt;
+        &lt;daw:LedToggleButton Role=&quot;Mute&quot; Content=&quot;M&quot; IsChecked=&quot;{Binding IsMuted}&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Window&gt;</code></pre></div><div class="code"><div class="code-head"><span class="lang">C#</span><span class="code-title">MainWindow.xaml.cs</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">meter.PushLevels(peak, rms);           // from your audio thread, no lock needed
+SkinManager.Apply(DawSkin.Studio);     // switch the skin of the whole app</code></pre></div></div>
+  </div>
+</section>
+<section class="band">
+  <div class="band-inner">
+    <h2>Five skins, one line of code</h2>
+    <p class="sub">Every colour is a skin key, and every template uses <code>DynamicResource</code>, so a new skin shows at once, even while the app runs. Click a skin to see every screenshot on this site in it.</p>
+    <div class="skin-strip"><button type="button" data-skin="graphite"><img src="img/graphite/gallery-studio-demo.png" alt="Graphite skin" loading="lazy"><span>Graphite</span></button><button type="button" data-skin="studio"><img src="img/studio/gallery-studio-demo.png" alt="Studio skin" loading="lazy"><span>Studio</span></button><button type="button" data-skin="lightclassic"><img src="img/lightclassic/gallery-studio-demo.png" alt="Light classic skin" loading="lazy"><span>Light classic</span></button><button type="button" data-skin="retrohardware"><img src="img/retrohardware/gallery-studio-demo.png" alt="Retro hardware skin" loading="lazy"><span>Retro hardware</span></button><button type="button" data-skin="highcontrast"><img src="img/highcontrast/gallery-studio-demo.png" alt="High contrast skin" loading="lazy"><span>High contrast</span></button></div>
+    <p style="text-align:center;margin-top:24px"><a href="guide/skins.html">Skins, skin keys and making your own →</a></p>
+  </div>
+</section>
+<section class="band alt">
+  <div class="band-inner">
+    <h2>The controls</h2>
+    <p class="sub">Each control page has a screenshot in every skin, XAML and C# examples, the mouse and keyboard handling, and the full API.</p>
+    <div class="card-grid"><a class="card" href="controls/knob.html"><span class="thumb"><img src="img/graphite/knob.png" data-shot="knob" alt="" loading="lazy"></span><span class="card-body"><b>Knob</b><span>A rotary control with a value ring, a label and a value readout. The workhorse of every synth and effect panel.</span></span></a><a class="card" href="controls/fader.html"><span class="thumb"><img src="img/graphite/fader.png" data-shot="fader" alt="" loading="lazy"></span><span class="card-body"><b>Fader</b><span>A slider with a moving cap, vertical or horizontal, with a decibel curve for mixer channels.</span></span></a><a class="card" href="controls/valuebox.html"><span class="thumb"><img src="img/graphite/valuebox.png" data-shot="valuebox" alt="" loading="lazy"></span><span class="card-body"><b>ValueBox</b><span>A compact numeric field: drag or scroll it like a knob, or double-click and type a value.</span></span></a><a class="card" href="controls/xypad.html"><span class="thumb"><img src="img/graphite/xy-pad.png" data-shot="xy-pad" alt="" loading="lazy"></span><span class="card-body"><b>XYPad</b><span>Two parameters at once on a square pad, such as filter cutoff and resonance.</span></span></a><a class="card" href="controls/envelopeeditor.html"><span class="thumb"><img src="img/graphite/envelope-editor.png" data-shot="envelope-editor" alt="" loading="lazy"></span><span class="card-body"><b>EnvelopeEditor</b><span>A graphical ADSR envelope: drag the handles to set attack, decay, sustain and release.</span></span></a><a class="card" href="controls/levelmeter.html"><span class="thumb"><img src="img/graphite/level-meter.png" data-shot="level-meter" alt="" loading="lazy"></span><span class="card-body"><b>LevelMeter</b><span>A peak and RMS meter with peak hold and a clip light, fed lock-free from your audio thread.</span></span></a><a class="card" href="controls/valuescale.html"><span class="thumb"><img src="img/graphite/fader-with-scale-and-meter.png" data-shot="fader-with-scale-and-meter" alt="" loading="lazy"></span><span class="card-body"><b>ValueScale</b><span>Tick marks and labels for a fader or meter, using the same taper so the ticks line up exactly.</span></span></a><a class="card" href="controls/midiactivitymonitor.html"><span class="thumb"><img src="img/graphite/midi-activity.png" data-shot="midi-activity" alt="" loading="lazy"></span><span class="card-body"><b>MidiActivityMonitor</b><span>MIDI activity lights per channel or per track: notes, controllers, held notes and the last message.</span></span></a><a class="card" href="controls/ledtogglebutton.html"><span class="thumb"><img src="img/graphite/led-buttons.png" data-shot="led-buttons" alt="" loading="lazy"></span><span class="card-body"><b>LedToggleButton</b><span>A latching button that lights up when on: mute, solo, record arm, monitor and your own toggles.</span></span></a><a class="card" href="controls/transportbutton.html"><span class="thumb"><img src="img/graphite/transport-buttons.png" data-shot="transport-buttons" alt="" loading="lazy"></span><span class="card-body"><b>TransportButton</b><span>A single transport button with a built-in icon: play, stop, record, loop, metronome and more.</span></span></a><a class="card" href="controls/transportbar.html"><span class="thumb"><img src="img/graphite/transport-bar.png" data-shot="transport-bar" alt="" loading="lazy"></span><span class="card-body"><b>TransportBar</b><span>A complete transport in one control: buttons, position display, tempo and time signature.</span></span></a><a class="card" href="controls/timedisplay.html"><span class="thumb"><img src="img/graphite/time-display.png" data-shot="time-display" alt="" loading="lazy"></span><span class="card-body"><b>TimeDisplay</b><span>An LCD readout of a song position, as bars, beats and ticks or as minutes and seconds.</span></span></a><a class="card" href="controls/channelstrip.html"><span class="thumb"><img src="img/graphite/channel-strip.png" data-shot="channel-strip" alt="" loading="lazy"></span><span class="card-body"><b>ChannelStrip</b><span>A complete mixer channel: name, pan, fader with a dB scale, stereo meter, mute, solo and arm.</span></span></a><a class="card" href="controls/trackheader.html"><span class="thumb"><img src="img/graphite/track-header.png" data-shot="track-header" alt="" loading="lazy"></span><span class="card-body"><b>TrackHeader</b><span>The header of a track in an arranger or track list: colour, number, name, mute, solo, output and activity.</span></span></a><a class="card" href="controls/dawpanel.html"><span class="thumb"><img src="img/graphite/panel.png" data-shot="panel" alt="" loading="lazy"></span><span class="card-body"><b>DawPanel</b><span>A titled panel in the skin colours, with header tools and a hide button.</span></span></a><a class="card" href="controls/nineframe.html"><span class="thumb"><img src="img/graphite/nineframe.png" data-shot="nineframe" alt="" loading="lazy"></span><span class="card-body"><b>NineFrame</b><span>A drop-in replacement for Border with bevels, drawn by the same renderer as the controls.</span></span></a><a class="card" href="controls/pianokeyboard.html"><span class="thumb"><img src="img/graphite/piano-keyboard.png" data-shot="piano-keyboard" alt="" loading="lazy"></span><span class="card-body"><b>PianoKeyboard</b><span>A playable piano keyboard in three styles, with velocity, highlights, finger numbers and computer-keyboard play.</span></span></a><a class="card" href="controls/performancewheel.html"><span class="thumb"><img src="img/graphite/wheels-and-pedals.png" data-shot="wheels-and-pedals" alt="" loading="lazy"></span><span class="card-body"><b>PerformanceWheel</b><span>Hardware-style pitch-bend and modulation wheels.</span></span></a><a class="card" href="controls/pianopedals.html"><span class="thumb"><img src="img/graphite/wheels-and-pedals.png" data-shot="wheels-and-pedals" alt="" loading="lazy"></span><span class="card-body"><b>PianoPedals</b><span>Soft, sostenuto and sustain pedals that show half-pedalling and can be pressed with the mouse.</span></span></a><a class="card" href="controls/pianoroll.html"><span class="thumb"><img src="img/graphite/piano-roll.png" data-shot="piano-roll" alt="" loading="lazy"></span><span class="card-body"><b>PianoRoll</b><span>A fast note editor with a keyboard gutter, bar ruler, snapping, selection, zoom and a playhead.</span></span></a><a class="card" href="controls/controllerlane.html"><span class="thumb"><img src="img/graphite/controller-lane.png" data-shot="controller-lane" alt="" loading="lazy"></span><span class="card-body"><b>ControllerLane</b><span>Velocity, controller and pitch-bend editing under a piano roll, following its scroll, zoom and playhead.</span></span></a><a class="card" href="controls/stepsequencer.html"><span class="thumb"><img src="img/graphite/step-sequencer.png" data-shot="step-sequencer" alt="" loading="lazy"></span><span class="card-body"><b>StepSequencer</b><span>A drum-machine grid with velocity per step, row labels, groups and a playhead.</span></span></a></div>
+  </div>
+</section>
+
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  
+</div>
+<div class="search-results" hidden></div>
+<script src="assets/prism.js"></script>
+<script>window.NDAW_ROOT="";</script>
+<script src="assets/search-index.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

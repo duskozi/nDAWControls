@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recipes · nDAWControls</title>
+<meta name="description" content="Complete examples: a mixer from a view-model, MIDI with DryWetMidi, audio meters with NAudio, a synced sequencer and a drum engine.">
+<meta property="og:title" content="Recipes · nDAWControls">
+<meta property="og:description" content="Complete examples: a mixer from a view-model, MIDI with DryWetMidi, audio meters with NAudio, a synced sequencer and a drum engine.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<script>try{var t=localStorage.getItem('ndaw-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body class="">
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <button class="menu-btn" type="button" aria-label="Open the menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="brand" href="../index.html"><img src="../assets/icon.png" alt="" width="26" height="26"><span><b>nDAW</b>Controls</span></a>
+  <nav class="top-links">
+    <a href="../guide/getting-started.html">Guide</a>
+    <a href="../controls/index.html">Controls</a>
+    <a href="../guide/skins.html">Skins</a>
+    <a href="../guide/recipes.html">Recipes</a>
+  </nav>
+  <div class="top-right">
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search docs" aria-label="Search the documentation" id="search"><kbd>/</kbd></label>
+    <button class="theme-btn" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="icon-link" href="https://github.com/duskozi/nDAWControls" aria-label="GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+    <a class="nuget-btn" href="https://www.nuget.org/packages/nDAWControls">NuGet <span>v1.0.2</span></a>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" aria-label="Documentation"><div class="sidebar-inner"><div class="nav-sec"><h4>Guide</h4><ul><li><a href="../index.html">Introduction</a></li><li><a href="../guide/getting-started.html">Getting started</a></li><li><a href="../guide/concepts.html">Core concepts</a></li><li><a href="../guide/threading.html">Threading and real-time data</a></li><li><a href="../guide/mvvm.html">MVVM and binding</a></li><li><a href="../guide/skins.html">Skins</a></li><li><a href="../guide/recipes.html" aria-current="page">Recipes</a></li><li><a href="../guide/faq.html">FAQ</a></li></ul></div><div class="nav-sec"><h4>Controls</h4><ul><li><a href="../controls/index.html">All controls</a></li></ul></div><div class="nav-sec"><h4>Parameters</h4><ul><li><a href="../controls/knob.html">Knob</a></li><li><a href="../controls/fader.html">Fader</a></li><li><a href="../controls/valuebox.html">ValueBox</a></li><li><a href="../controls/xypad.html">XYPad</a></li><li><a href="../controls/envelopeeditor.html">EnvelopeEditor</a></li></ul></div><div class="nav-sec"><h4>Metering</h4><ul><li><a href="../controls/levelmeter.html">LevelMeter</a></li><li><a href="../controls/valuescale.html">ValueScale</a></li><li><a href="../controls/midiactivitymonitor.html">MidiActivityMonitor</a></li></ul></div><div class="nav-sec"><h4>Buttons and transport</h4><ul><li><a href="../controls/ledtogglebutton.html">LedToggleButton</a></li><li><a href="../controls/transportbutton.html">TransportButton</a></li><li><a href="../controls/transportbar.html">TransportBar</a></li><li><a href="../controls/timedisplay.html">TimeDisplay</a></li></ul></div><div class="nav-sec"><h4>Mixer and layout</h4><ul><li><a href="../controls/channelstrip.html">ChannelStrip</a></li><li><a href="../controls/trackheader.html">TrackHeader</a></li><li><a href="../controls/dawpanel.html">DawPanel</a></li><li><a href="../controls/nineframe.html">NineFrame</a></li></ul></div><div class="nav-sec"><h4>Piano</h4><ul><li><a href="../controls/pianokeyboard.html">PianoKeyboard</a></li><li><a href="../controls/performancewheel.html">PerformanceWheel</a></li><li><a href="../controls/pianopedals.html">PianoPedals</a></li></ul></div><div class="nav-sec"><h4>Note editing</h4><ul><li><a href="../controls/pianoroll.html">PianoRoll</a></li><li><a href="../controls/controllerlane.html">ControllerLane</a></li><li><a href="../controls/stepsequencer.html">StepSequencer</a></li></ul></div></div></aside>
+  <main id="content" class="content">
+<div class="page-head"><div class="crumbs">Guide</div><h1>Recipes</h1><p class="lede">Complete, copy-ready examples that combine several controls with a real MIDI or audio library.</p></div><section><h2 id="a-mixer-from-a-view-model"><a class="anchor" href="#a-mixer-from-a-view-model">#</a>A mixer from a view-model</h2>
+<p>A mixer whose channels come from a collection of track view-models, with meters fed from the audio engine.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/channel-strip.png" data-shot="channel-strip" width="308" height="408" alt="Channel strips, as the ItemsControl below draws them." loading="lazy" decoding="async"></div><figcaption>Channel strips, as the ItemsControl below draws them.</figcaption></figure><div class="code"><div class="code-head"><span class="lang">C#</span><span class="code-title">MixerViewModel.cs</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">public sealed class TrackViewModel : ObservableObject
+{
+    private double _volume, _pan;
+    private bool _muted, _soloed, _armed;
+
+    public TrackViewModel(string name, Color color) { Name = name; Color = new SolidColorBrush(color); }
+
+    public string Name  { get; }
+    public Brush  Color { get; }
+    public double Volume   { get =&gt; _volume; set =&gt; Set(ref _volume, value); }   // dB
+    public double Pan      { get =&gt; _pan;    set =&gt; Set(ref _pan, value); }      // -1..1
+    public bool   IsMuted  { get =&gt; _muted;  set =&gt; Set(ref _muted, value); }
+    public bool   IsSoloed { get =&gt; _soloed; set =&gt; Set(ref _soloed, value); }
+    public bool   IsArmed  { get =&gt; _armed;  set =&gt; Set(ref _armed, value); }
+}
+
+public sealed class MixerViewModel
+{
+    public ObservableCollection&lt;TrackViewModel&gt; Tracks { get; } = new()
+    {
+        new(&quot;Kick&quot;,  Color.FromRgb(0xFF, 0x6B, 0x5A)),
+        new(&quot;Snare&quot;, Color.FromRgb(0xFF, 0xC8, 0x4A)),
+        new(&quot;Bass&quot;,  Color.FromRgb(0x6F, 0xA8, 0xFF)),
+        new(&quot;Keys&quot;,  Color.FromRgb(0x4C, 0xD6, 0x9A)),
+    };
+}</code></pre></div><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">MixerView.xaml</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;ItemsControl x:Name=&quot;mixer&quot; ItemsSource=&quot;{Binding Tracks}&quot;&gt;
+    &lt;ItemsControl.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;&lt;StackPanel Orientation=&quot;Horizontal&quot;/&gt;&lt;/ItemsPanelTemplate&gt;
+    &lt;/ItemsControl.ItemsPanel&gt;
+    &lt;ItemsControl.ItemTemplate&gt;
+        &lt;DataTemplate&gt;
+            &lt;daw:ChannelStrip TrackName=&quot;{Binding Name}&quot; TrackColor=&quot;{Binding Color}&quot; Margin=&quot;0,0,4,0&quot;
+                              Volume=&quot;{Binding Volume, Mode=TwoWay}&quot; Pan=&quot;{Binding Pan, Mode=TwoWay}&quot;
+                              IsMuted=&quot;{Binding IsMuted, Mode=TwoWay}&quot; IsSoloed=&quot;{Binding IsSoloed, Mode=TwoWay}&quot;
+                              IsArmed=&quot;{Binding IsArmed, Mode=TwoWay}&quot; Loaded=&quot;OnStripLoaded&quot;/&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ItemsControl.ItemTemplate&gt;
+&lt;/ItemsControl&gt;</code></pre></div><p>The engine needs the strips to push levels. Collect them as they load, and let the engine call <code>PushLevels</code> from its audio thread:</p><div class="code"><div class="code-head"><span class="lang">C#</span><span class="code-title">MixerView.xaml.cs</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">private readonly ConcurrentDictionary&lt;TrackViewModel, ChannelStrip&gt; _strips = new();
+
+private void OnStripLoaded(object sender, RoutedEventArgs e)
+{
+    var strip = (ChannelStrip)sender;
+    _strips[(TrackViewModel)strip.DataContext] = strip;
+}
+
+// Audio thread, once per block and track:
+void OnTrackLevels(TrackViewModel track, float pl, float rl, float pr, float rr)
+{
+    if (_strips.TryGetValue(track, out var strip)) strip.PushLevels(pl, rl, pr, rr);
+}</code></pre></div>
+</section>
+<section><h2 id="playing-midi-with-drywetmidi"><a class="anchor" href="#playing-midi-with-drywetmidi">#</a>Playing MIDI with DryWetMidi</h2>
+<p>A keyboard with wheels and pedals that plays a MIDI output, and lights up from a MIDI input. This uses <a href="https://github.com/melanchall/drywetmidi">DryWetMidi</a> (<code>dotnet add package Melanchall.DryWetMidi</code>); the MIDI player sample works the same way.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/wheels-and-pedals.png" data-shot="wheels-and-pedals" width="170" height="158" alt="Wheels and pedals." loading="lazy" decoding="async"></div><figcaption>Wheels and pedals.</figcaption></figure><div class="code"><div class="code-head"><span class="lang">XAML</span><span class="code-title">KeyboardView.xaml</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;DockPanel&gt;
+    &lt;StackPanel DockPanel.Dock=&quot;Left&quot; Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,6,0&quot;&gt;
+        &lt;daw:PerformanceWheel x:Name=&quot;pitch&quot; Mode=&quot;PitchBend&quot; Height=&quot;110&quot;/&gt;
+        &lt;daw:PerformanceWheel x:Name=&quot;mod&quot; Mode=&quot;Modulation&quot; Height=&quot;110&quot; Margin=&quot;4,0,0,0&quot;/&gt;
+    &lt;/StackPanel&gt;
+    &lt;daw:PianoPedals x:Name=&quot;pedals&quot; DockPanel.Dock=&quot;Bottom&quot; HorizontalAlignment=&quot;Right&quot; Margin=&quot;0,4,0,0&quot;/&gt;
+    &lt;daw:PianoKeyboard x:Name=&quot;keys&quot; Height=&quot;110&quot; LowestNote=&quot;36&quot; HighestNote=&quot;96&quot;/&gt;
+&lt;/DockPanel&gt;</code></pre></div><div class="code"><div class="code-head"><span class="lang">C#</span><span class="code-title">KeyboardView.xaml.cs</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">using Melanchall.DryWetMidi.Common;
+using Melanchall.DryWetMidi.Core;
+using Melanchall.DryWetMidi.Multimedia;
+
+public partial class KeyboardView : UserControl
+{
+    private readonly OutputDevice _out = OutputDevice.GetByName(&quot;Microsoft GS Wavetable Synth&quot;);
+    private InputDevice? _in;
+
+    public KeyboardView()
+    {
+        InitializeComponent();
+
+        keys.NoteOn  += (s, e) =&gt; _out.SendEvent(new NoteOnEvent((SevenBitNumber)e.Note, (SevenBitNumber)e.Velocity));
+        keys.NoteOff += (s, e) =&gt; _out.SendEvent(new NoteOffEvent((SevenBitNumber)e.Note, (SevenBitNumber)0));
+
+        pitch.ValueChanged += (s, e) =&gt; _out.SendEvent(new PitchBendEvent((ushort)(e.NewValue + 8192)));
+        mod.ValueChanged   += (s, e) =&gt; _out.SendEvent(new ControlChangeEvent((SevenBitNumber)1, (SevenBitNumber)e.NewValue));
+
+        pedals.PedalChanged += (s, e) =&gt;
+        {
+            if (e.IsUserChange)
+                _out.SendEvent(new ControlChangeEvent((SevenBitNumber)e.Controller, (SevenBitNumber)e.Value));
+        };
+
+        Unloaded += (s, e) =&gt; { _in?.Dispose(); _out.Dispose(); };
+    }
+
+    public void ListenTo(string inputName)
+    {
+        _in = InputDevice.GetByName(inputName);
+        _in.EventReceived += OnMidiIn;        // driver thread
+        _in.StartEventsListening();
+    }
+
+    private void OnMidiIn(object? sender, MidiEventReceivedEventArgs e)
+    {
+        _out.SendEvent(e.Event);              // MIDI thru
+        Dispatcher.BeginInvoke(() =&gt;
+        {
+            switch (e.Event)
+            {
+                case NoteOnEvent on when on.Velocity &gt; 0: keys.SetHighlighted(on.NoteNumber, on.Velocity); break;
+                case NoteOnEvent on:                     keys.SetHighlighted(on.NoteNumber, false); break;
+                case NoteOffEvent off:                   keys.SetHighlighted(off.NoteNumber, false); break;
+                case ControlChangeEvent cc:              pedals.ApplyControlChange(cc.ControlNumber, cc.ControlValue); break;
+            }
+        });
+    }
+}</code></pre></div>
+</section>
+<section><h2 id="metering-audio-with-naudio"><a class="anchor" href="#metering-audio-with-naudio">#</a>Metering audio with NAudio</h2>
+<p>Meters for what your PC is playing, with <a href="https://github.com/naudio/NAudio">NAudio</a>&#x27;s loopback capture (<code>dotnet add package NAudio</code>). The capture callback runs on a background thread and pushes straight into the strip.</p><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">using NAudio.Wave;
+
+var capture = new WasapiLoopbackCapture();          // 32-bit float, usually stereo
+int channels = capture.WaveFormat.Channels;
+
+capture.DataAvailable += (s, e) =&gt;
+{
+    var buffer = new WaveBuffer(e.Buffer);
+    int frames = e.BytesRecorded / 4 / channels;
+    float pl = 0, pr = 0, sl = 0, sr = 0;
+    for (int i = 0; i &lt; frames; i++)
+    {
+        float l = Math.Abs(buffer.FloatBuffer[i * channels]);
+        float r = Math.Abs(buffer.FloatBuffer[i * channels + (channels &gt; 1 ? 1 : 0)]);
+        pl = Math.Max(pl, l); pr = Math.Max(pr, r);
+        sl += l * l; sr += r * r;
+    }
+    if (frames &gt; 0) master.PushLevels(pl, MathF.Sqrt(sl / frames), pr, MathF.Sqrt(sr / frames));
+};
+capture.StartRecording();
+
+Closed += (s, e) =&gt; { capture.StopRecording(); capture.Dispose(); };</code></pre></div><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;daw:ChannelStrip x:Name=&quot;master&quot; TrackName=&quot;Output&quot; ShowArmButton=&quot;False&quot;/&gt;</code></pre></div>
+</section>
+<section><h2 id="piano-roll-lane-and-transport-in-sync"><a class="anchor" href="#piano-roll-lane-and-transport-in-sync">#</a>Piano roll, lane and transport in sync</h2>
+<p>A small sequencer screen: a transport, a piano roll with a velocity lane, and a keyboard that lights the notes under the playhead. One clock drives everything, read once per frame.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/piano-roll.png" data-shot="piano-roll" width="808" height="368" alt="A piano roll with its velocity lane." loading="lazy" decoding="async"></div><figcaption>A piano roll with its velocity lane.</figcaption></figure><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;DockPanel&gt;
+    &lt;daw:TransportBar x:Name=&quot;transport&quot; DockPanel.Dock=&quot;Top&quot; Tempo=&quot;120&quot; IsLooping=&quot;True&quot;/&gt;
+    &lt;daw:PianoKeyboard x:Name=&quot;keys&quot; DockPanel.Dock=&quot;Bottom&quot; Height=&quot;80&quot; LowestNote=&quot;36&quot; HighestNote=&quot;96&quot;/&gt;
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+            &lt;RowDefinition Height=&quot;90&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;ScrollViewer CanContentScroll=&quot;True&quot; HorizontalScrollBarVisibility=&quot;Auto&quot; VerticalScrollBarVisibility=&quot;Auto&quot;&gt;
+            &lt;daw:PianoRoll x:Name=&quot;roll&quot; LengthInBeats=&quot;16&quot; Snap=&quot;0.25&quot; FollowPlayhead=&quot;True&quot;/&gt;
+        &lt;/ScrollViewer&gt;
+        &lt;daw:ControllerLane Grid.Row=&quot;1&quot; Roll=&quot;{Binding ElementName=roll}&quot; Mode=&quot;Velocity&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/DockPanel&gt;</code></pre></div><div class="code"><div class="code-head"><span class="lang">C#</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">private readonly ObservableCollection&lt;MidiNote&gt; _notes = new();
+private readonly Stopwatch _clock = new();
+private double _startBeat;
+private readonly HashSet&lt;int&gt; _lit = new();
+
+public SequencerView()
+{
+    InitializeComponent();
+    foreach (var (p, s) in new[] { (60, 0.0), (64, 1.0), (67, 2.0), (72, 3.0) }) _notes.Add(new MidiNote(p, s, 1, 100));
+    roll.Notes = _notes;
+
+    transport.PlayCommand = new RelayCommand&lt;bool&gt;(play =&gt;
+    {
+        if (play) { _startBeat = transport.Position; _clock.Restart(); } else _clock.Stop();
+    });
+    CompositionTarget.Rendering += OnFrame;
+}
+
+private void OnFrame(object? sender, EventArgs e)
+{
+    if (!transport.IsPlaying) return;
+    double beat = _startBeat + _clock.Elapsed.TotalMinutes * transport.Tempo;
+    if (transport.IsLooping) beat %= roll.LengthInBeats;
+
+    transport.Position = beat;
+    roll.PlayheadPosition = beat;
+
+    var now = _notes.Where(n =&gt; beat &gt;= n.Start &amp;&amp; beat &lt; n.Start + n.Length).Select(n =&gt; n.Pitch).ToHashSet();
+    foreach (int p in _lit.Except(now)) keys.SetHighlighted(p, false);
+    foreach (var n in _notes.Where(n =&gt; now.Contains(n.Pitch) &amp;&amp; !_lit.Contains(n.Pitch))) keys.SetHighlighted(n.Pitch, n.Velocity);
+    _lit.Clear(); _lit.UnionWith(now);
+}</code></pre></div>
+</section>
+<section><h2 id="a-step-sequencer-engine"><a class="anchor" href="#a-step-sequencer-engine">#</a>A step sequencer engine</h2>
+<p>A drum machine: the pattern is edited on the UI thread, a background thread plays it with sixteenth-note timing, and the playhead is shown with <code>CurrentStep</code>.</p><figure class="shot "><div class="shot-frame"><img src="../img/graphite/step-sequencer.png" data-shot="step-sequencer" width="748" height="188" alt="A drum pattern." loading="lazy" decoding="async"></div><figcaption>A drum pattern.</figcaption></figure><div class="code"><div class="code-head"><span class="lang">C#</span><span class="code-title">DrumEngine.cs</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">public sealed class DrumEngine : IDisposable
+{
+    private static readonly int[] Notes = { 36, 38, 42, 39 };     // kick, snare, closed hat, clap (GM drums)
+    private readonly StepPattern _pattern;
+    private readonly Action&lt;int, int, int&gt; _noteOn;               // (channel, note, velocity)
+    private readonly Thread _thread;
+    private volatile bool _running = true;
+    public volatile int Step = -1;
+    public double Tempo = 120;
+
+    public DrumEngine(StepPattern pattern, Action&lt;int, int, int&gt; noteOn)
+    {
+        _pattern = pattern; _noteOn = noteOn;
+        _thread = new Thread(Run) { IsBackground = true, Priority = ThreadPriority.AboveNormal };
+        _thread.Start();
+    }
+
+    private void Run()
+    {
+        var clock = Stopwatch.StartNew();
+        long next = 0; int step = 0;
+        while (_running)
+        {
+            long now = clock.ElapsedTicks;
+            if (now &lt; next) { Thread.Sleep(1); continue; }
+            for (int row = 0; row &lt; _pattern.Rows; row++)
+            {
+                int v = _pattern.GetVelocity(row, step);
+                if (v &gt; 0) _noteOn(9, Notes[row], v);
+            }
+            Step = step;
+            step = (step + 1) % _pattern.Steps;
+            next += (long)(Stopwatch.Frequency * 60.0 / Tempo / 4);    // one sixteenth
+        }
+    }
+
+    public void Dispose() { _running = false; _thread.Join(); }
+}</code></pre></div><div class="code"><div class="code-head"><span class="lang">C#</span><span class="code-title">DrumView.xaml.cs</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-csharp">var pattern = new StepPattern(rows: 4, steps: 16);
+steps.Pattern = pattern;
+steps.RowLabels = new[] { &quot;Kick&quot;, &quot;Snare&quot;, &quot;Hat&quot;, &quot;Clap&quot; };
+
+var engine = new DrumEngine(pattern, (ch, note, vel) =&gt; midiOut.NoteOn(ch, note, vel));
+CompositionTarget.Rendering += (s, e) =&gt; steps.CurrentStep = engine.Step;</code></pre></div>
+</section>
+<section><h2 id="a-synth-panel"><a class="anchor" href="#a-synth-panel">#</a>A synth panel</h2>
+<p>Panels, knobs, an XY pad and an envelope, all bound to one view-model.</p><div class="code"><div class="code-head"><span class="lang">XAML</span><button class="copy" type="button" aria-label="Copy code">Copy</button></div><pre><code class="language-markup">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;daw:DawPanel Header=&quot;OSCILLATOR&quot; Width=&quot;220&quot; CanHide=&quot;False&quot;&gt;
+        &lt;WrapPanel Margin=&quot;8&quot;&gt;
+            &lt;daw:Knob Label=&quot;Wave&quot;   Minimum=&quot;0&quot; Maximum=&quot;3&quot; Step=&quot;1&quot; Value=&quot;{Binding Wave}&quot;/&gt;
+            &lt;daw:Knob Label=&quot;Detune&quot; Minimum=&quot;-50&quot; Maximum=&quot;50&quot; IsBipolar=&quot;True&quot; Value=&quot;{Binding Detune}&quot;
+                      ValueStringFormat=&quot;{}{0:+0;-0;0} ct&quot;/&gt;
+            &lt;daw:Knob Label=&quot;Level&quot;  Value=&quot;{Binding Level}&quot; ValueFormatter=&quot;{x:Static daw:ValueFormatters.Percent}&quot;/&gt;
+        &lt;/WrapPanel&gt;
+    &lt;/daw:DawPanel&gt;
+    &lt;daw:DawPanel Header=&quot;FILTER&quot; Margin=&quot;8,0&quot; CanHide=&quot;False&quot;&gt;
+        &lt;daw:XYPad Width=&quot;200&quot; Height=&quot;150&quot; Margin=&quot;8&quot; XLabel=&quot;cutoff&quot; YLabel=&quot;resonance&quot;
+                   XValue=&quot;{Binding CutoffNorm, Mode=TwoWay}&quot; YValue=&quot;{Binding Resonance, Mode=TwoWay}&quot;/&gt;
+    &lt;/daw:DawPanel&gt;
+    &lt;daw:DawPanel Header=&quot;AMP ENVELOPE&quot; CanHide=&quot;False&quot;&gt;
+        &lt;daw:EnvelopeEditor Width=&quot;280&quot; Height=&quot;150&quot; Margin=&quot;8&quot;
+                            Attack=&quot;{Binding Attack, Mode=TwoWay}&quot; Decay=&quot;{Binding Decay, Mode=TwoWay}&quot;
+                            Sustain=&quot;{Binding Sustain, Mode=TwoWay}&quot; Release=&quot;{Binding Release, Mode=TwoWay}&quot;/&gt;
+    &lt;/daw:DawPanel&gt;
+&lt;/StackPanel&gt;</code></pre></div>
+</section>
+    <footer class="foot">
+      <div>nDAWControls is MIT licensed. Made by Duško Žigić.</div>
+      <div><a href="https://github.com/duskozi/nDAWControls">GitHub</a> · <a href="https://www.nuget.org/packages/nDAWControls">NuGet</a> · <a href="https://github.com/duskozi/nDAWControls/releases">Releases</a> · <a href="https://github.com/duskozi/nDAWControls/issues">Report an issue</a></div>
+    </footer>
+  </main>
+  <aside class="toc"><h4>On this page</h4><ul><li class="l2"><a href="#a-mixer-from-a-view-model">A mixer from a view-model</a></li><li class="l2"><a href="#playing-midi-with-drywetmidi">Playing MIDI with DryWetMidi</a></li><li class="l2"><a href="#metering-audio-with-naudio">Metering audio with NAudio</a></li><li class="l2"><a href="#piano-roll-lane-and-transport-in-sync">Piano roll, lane and transport in sync</a></li><li class="l2"><a href="#a-step-sequencer-engine">A step sequencer engine</a></li><li class="l2"><a href="#a-synth-panel">A synth panel</a></li></ul></aside>
+</div>
+<div class="search-results" hidden></div>
+<script src="../assets/prism.js"></script>
+<script>window.NDAW_ROOT="../";</script>
+<script src="../assets/search-index.js"></script>
+<script src="../assets/site.js"></script>
+</body>
+</html>
