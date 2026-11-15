@@ -307,6 +307,30 @@ public static class SnippetCatalog
             activity.ControlChange(channel, 7, 100);
             """,
             root => Demo.FeedActivity(root, "activity", "compact")),
+
+        new("NineFrame", "Editors",
+            "A drop-in replacement for Border with a Bevel (Flat, Raised, Sunken, Glow), drawn by the same renderer as the controls. Use it for your own panels and displays.",
+            """
+            <StackPanel Orientation="Horizontal">
+                <daw:NineFrame Bevel="Sunken" CornerRadius="3" BorderThickness="1" Padding="10,4"
+                               Background="{DynamicResource {x:Static daw:DawSkinKeys.LcdBackground}}"
+                               BorderBrush="{DynamicResource {x:Static daw:DawSkinKeys.LcdBorder}}">
+                    <TextBlock Text="120.0 BPM" FontSize="16"
+                               Foreground="{DynamicResource {x:Static daw:DawSkinKeys.LcdText}}"
+                               FontFamily="{DynamicResource {x:Static daw:DawSkinKeys.LcdFontFamily}}"/>
+                </daw:NineFrame>
+                <daw:NineFrame Bevel="Raised" CornerRadius="4" BorderThickness="1" Padding="14,8" Margin="12,0,0,0"
+                               Background="{DynamicResource {x:Static daw:DawSkinKeys.PanelRaised}}"
+                               BorderBrush="{DynamicResource {x:Static daw:DawSkinKeys.PanelBorder}}">
+                    <TextBlock Text="RAISED"/>
+                </daw:NineFrame>
+                <daw:NineFrame Bevel="Glow" CornerRadius="4" BorderThickness="1" Padding="14,8" Margin="12,0,0,0"
+                               Background="{DynamicResource {x:Static daw:DawSkinKeys.PanelBackground}}"
+                               BorderBrush="{DynamicResource {x:Static daw:DawSkinKeys.Accent}}">
+                    <TextBlock Text="GLOW"/>
+                </daw:NineFrame>
+            </StackPanel>
+            """),
     };
 }
 
