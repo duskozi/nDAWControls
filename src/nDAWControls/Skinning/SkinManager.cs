@@ -22,6 +22,15 @@ public enum DawSkin
 
     /// <summary>Black and white with a yellow accent and strong outlines, for low vision and bright rooms.</summary>
     HighContrast,
+
+    /// <summary>Lit brushed silver with dark knobs, blue glass displays and orange accents.</summary>
+    Alloy,
+
+    /// <summary>Alloy on dark anodised metal, with blue glass displays and orange accents.</summary>
+    AlloyNight,
+
+    /// <summary>Alloy in champagne metal with amber glass displays and blue for selection.</summary>
+    AlloyEmber,
 }
 
 /// <summary>

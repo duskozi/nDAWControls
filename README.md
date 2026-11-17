@@ -13,7 +13,7 @@ The controls come from [nMIDI Editor](https://github.com/duskozi/nMidiEditor), w
 ## Features
 
 - **20 controls** for parameters, metering, transport, mixing, piano and note editing.
-- **Five skins**: Graphite, Studio, Light classic, Retro hardware and High contrast. Switch with one line of code,
+- **Eight skins**: Graphite, Studio, Light classic, Retro hardware, High contrast, and the hardware-style Alloy, Alloy Night and Alloy Ember. Switch with one line of code,
   for the whole app or for one panel. Make your own by copying a skin file.
 - **Built for real-time audio**: meters and MIDI activity lights take values from any thread without locks, and
   draw once per frame.

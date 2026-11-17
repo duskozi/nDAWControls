@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Three new skins in a hardware style, with light falling from the top left on metal panels, dark rubber
+  knobs and glowing glass displays: `Alloy` (brushed silver, blue glass), `AlloyNight` (dark metal, blue
+  glass) and `AlloyEmber` (champagne metal, amber glass). The piano keys keep their standard look.
+
 ## 1.0.2 (2026-11-14)
 
 - `PianoKeyboard` asks for a natural width (16 px per white key). In a StackPanel, an Auto column or a
