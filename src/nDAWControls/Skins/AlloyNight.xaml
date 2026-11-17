@@ -70,12 +70,12 @@
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.TransportPlay}" Color="#FF2FD27F" po:Freeze="True"/>
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.TransportRecord}" Color="#FFFF3B2F" po:Freeze="True"/>
     <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.LcdBackground}" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Offset="0" Color="#FF5FD0FF"/>
-        <GradientStop Offset="1" Color="#FF06306F"/>
+        <GradientStop Offset="0" Color="#FF2690E0"/>
+        <GradientStop Offset="1" Color="#FF062C66"/>
     </LinearGradientBrush>
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdBorder}" Color="#FF8A9098" po:Freeze="True"/>
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdText}" Color="#FFEFFAFF" po:Freeze="True"/>
-    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdTextDim}" Color="#FF8CC8F0" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdTextDim}" Color="#FFC6E9FF" po:Freeze="True"/>
     <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.KeyWhite}" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <GradientStop Offset="0" Color="#FFF1F2F4"/>
         <GradientStop Offset="1" Color="#FFD3D6DB"/>
