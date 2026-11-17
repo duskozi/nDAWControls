@@ -12,9 +12,9 @@ A skin is a `ResourceDictionary` with a value for every colour key in `DawSkinKe
 | `LightClassic` | Light grey with a blue accent and light knobs. |
 | `RetroHardware` | Warm dark brown with an orange accent and amber displays. |
 | `HighContrast` | Black and white with a yellow accent and strong outlines. |
-| `Alloy` | Lit brushed silver with dark rubber knobs, blue glass displays and orange for anything switched on. |
-| `AlloyNight` | Alloy on dark anodised metal: the same light and depth, blue glass displays, orange accents. |
-| `AlloyEmber` | Alloy in champagne metal with amber glass displays and blue for selection. |
+| `Alloy` | Lit brushed silver with detailed two-part knobs, dark recessed displays and orange for anything switched on. |
+| `AlloyNight` | Alloy on dark anodised metal: the same light and depth, detailed knobs, dark displays, orange accents. |
+| `AlloyEmber` | Alloy in champagne metal with amber displays and blue for selection. |
 
 ## Switching skins
 
@@ -95,7 +95,7 @@ automatically.
 | Group | Keys |
 | --- | --- |
 | Window and text | `WindowBackground`, `PanelBackground`, `PanelRaised`, `PanelBorder`, `Text`, `TextDim`, `Accent`, `AccentForeground`, `Focus` |
-| Knobs | `KnobBody`, `KnobBodyBorder`, `KnobTrack`, `KnobIndicator`, `KnobArcThickness` |
+| Knobs | `KnobBody`, `KnobBodyBorder`, `KnobTrack`, `KnobIndicator`, `KnobArcThickness`, and for more detail `KnobShadow`, `KnobGrip` (ribs that turn with the knob), `KnobCap` and `KnobHighlight` (transparent in the older skins) |
 | Faders | `FaderGroove`, `FaderFill`, `FaderThumb`, `FaderThumbBorder`, `FaderThumbLine` |
 | Meters and scales | `MeterBackground`, `MeterSafe`, `MeterWarning`, `MeterDanger`, `MeterPeakHold`, `MeterClipOn`, `MeterClipOff`, `ScaleTick`, `ScaleText` |
 | Buttons and LEDs | `ButtonBackground`, `ButtonHover`, `ButtonPressed`, `ButtonBorder`, `LedMute`, `LedSolo`, `LedArm`, `LedMonitor`, `LedLitForeground`, `TransportPlay`, `TransportRecord` |

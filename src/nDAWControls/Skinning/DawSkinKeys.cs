@@ -50,6 +50,18 @@ public static class DawSkinKeys
     /// <summary>Pointer line on the cap.</summary>
     public static ComponentResourceKey KnobIndicator { get; } = K(nameof(KnobIndicator));
 
+    /// <summary>Soft shadow under the knob, offset down and right. Transparent for none.</summary>
+    public static ComponentResourceKey KnobShadow { get; } = K(nameof(KnobShadow));
+
+    /// <summary>Grip ribs around the edge of the knob; they turn with it. Transparent for none.</summary>
+    public static ComponentResourceKey KnobGrip { get; } = K(nameof(KnobGrip));
+
+    /// <summary>Centre cap on top of the knob body, for a two-part knob. Transparent for none.</summary>
+    public static ComponentResourceKey KnobCap { get; } = K(nameof(KnobCap));
+
+    /// <summary>Light reflection over the knob, from a light at the top left. Transparent for none.</summary>
+    public static ComponentResourceKey KnobHighlight { get; } = K(nameof(KnobHighlight));
+
     /// <summary>Fader slot.</summary>
     public static ComponentResourceKey FaderGroove { get; } = K(nameof(FaderGroove));
 
@@ -288,6 +300,10 @@ public static class DawSkinKeys
         KnobBodyBorder,
         KnobTrack,
         KnobIndicator,
+        KnobShadow,
+        KnobGrip,
+        KnobCap,
+        KnobHighlight,
         FaderGroove,
         FaderFill,
         FaderThumb,

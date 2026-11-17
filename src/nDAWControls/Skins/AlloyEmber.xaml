@@ -1,4 +1,4 @@
-<!-- AlloyEmber skin of nDAWControls. Alloy in champagne metal with amber glass displays and blue for selection. The piano keys keep the standard look. -->
+<!-- AlloyEmber skin of nDAWControls. Alloy in champagne metal with amber displays and blue for selection. The piano keys keep the standard look. -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -31,7 +31,20 @@
     </RadialGradientBrush>
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KnobBodyBorder}" Color="#FFB3A99C" po:Freeze="True"/>
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KnobTrack}" Color="#FF9D9488" po:Freeze="True"/>
-    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KnobIndicator}" Color="#FFFFE9C7" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KnobIndicator}" Color="#FFFF8A1F" po:Freeze="True"/>
+    <RadialGradientBrush x:Key="{x:Static skin:DawSkinKeys.KnobShadow}" po:Freeze="True">
+        <GradientStop Offset="0.55" Color="#99000000"/>
+        <GradientStop Offset="1" Color="#00000000"/>
+    </RadialGradientBrush>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.KnobGrip}" Color="#50FFFFFF" po:Freeze="True"/>
+    <RadialGradientBrush x:Key="{x:Static skin:DawSkinKeys.KnobCap}" GradientOrigin="0.35,0.25" Center="0.4,0.3" RadiusX="0.8" RadiusY="0.8" po:Freeze="True">
+        <GradientStop Offset="0" Color="#FFFFF8EC"/>
+        <GradientStop Offset="1" Color="#FFA89E90"/>
+    </RadialGradientBrush>
+    <RadialGradientBrush x:Key="{x:Static skin:DawSkinKeys.KnobHighlight}" GradientOrigin="0.3,0.18" Center="0.35,0.25" RadiusX="0.65" RadiusY="0.6" po:Freeze="True">
+        <GradientStop Offset="0" Color="#50FFFFFF"/>
+        <GradientStop Offset="1" Color="#00FFFFFF"/>
+    </RadialGradientBrush>
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.FaderGroove}" Color="#FF1A1715" po:Freeze="True"/>
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.FaderFill}" Color="#FFFF8A1F" po:Freeze="True"/>
     <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.FaderThumb}" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
@@ -70,12 +83,12 @@
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.TransportPlay}" Color="#FF22C873" po:Freeze="True"/>
     <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.TransportRecord}" Color="#FFFF3B2F" po:Freeze="True"/>
     <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.LcdBackground}" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
-        <GradientStop Offset="0" Color="#FFE8892A"/>
-        <GradientStop Offset="1" Color="#FF7A3204"/>
+        <GradientStop Offset="0" Color="#FF17130F"/>
+        <GradientStop Offset="1" Color="#FF26201A"/>
     </LinearGradientBrush>
-    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdBorder}" Color="#FFD6CEC2" po:Freeze="True"/>
-    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdText}" Color="#FFFFF6E8" po:Freeze="True"/>
-    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdTextDim}" Color="#FFFFE6C2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdBorder}" Color="#FF5A5045" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdText}" Color="#FFFFB13B" po:Freeze="True"/>
+    <SolidColorBrush x:Key="{x:Static skin:DawSkinKeys.LcdTextDim}" Color="#FF8A6A3E" po:Freeze="True"/>
     <LinearGradientBrush x:Key="{x:Static skin:DawSkinKeys.KeyWhite}" StartPoint="0,0" EndPoint="0,1" po:Freeze="True">
         <GradientStop Offset="0" Color="#FFF1F2F4"/>
         <GradientStop Offset="1" Color="#FFD3D6DB"/>

@@ -2,9 +2,11 @@
 
 ## Unreleased
 
-- Three new skins in a hardware style, with light falling from the top left on metal panels, dark rubber
-  knobs and glowing glass displays: `Alloy` (brushed silver, blue glass), `AlloyNight` (dark metal, blue
-  glass) and `AlloyEmber` (champagne metal, amber glass). The piano keys keep their standard look.
+- Three new skins in a hardware style, with light falling from the top left on metal panels, detailed
+  knobs and dark recessed displays: `Alloy` (brushed silver), `AlloyNight` (dark metal) and `AlloyEmber`
+  (champagne metal, amber displays). The piano keys keep their standard look.
+- Knobs can have more detail: four new skin keys `KnobShadow`, `KnobGrip` (ribs that turn with the knob),
+  `KnobCap` and `KnobHighlight`. They are transparent in the older skins, which look as before.
 
 ## 1.0.2 (2026-11-14)
 

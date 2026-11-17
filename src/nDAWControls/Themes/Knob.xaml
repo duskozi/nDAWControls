@@ -30,7 +30,18 @@
                                 <p:ArcElement x:Name="ValueArc" Stroke="{TemplateBinding ArcBrush}" Thickness="{DynamicResource {x:Static s:DawSkinKeys.KnobArcThickness}}"
                                               MinAngle="{TemplateBinding MinAngle}" MaxAngle="{TemplateBinding MaxAngle}"
                                               From="{TemplateBinding ArcOrigin}" To="{TemplateBinding NormalizedValue}"/>
+                                <Ellipse Margin="8,9.5,6,4.5" Fill="{DynamicResource {x:Static s:DawSkinKeys.KnobShadow}}" IsHitTestVisible="False"/>
                                 <Ellipse x:Name="Body" Margin="7" Fill="{DynamicResource {x:Static s:DawSkinKeys.KnobBody}}" Stroke="{DynamicResource {x:Static s:DawSkinKeys.KnobBodyBorder}}" StrokeThickness="1"/>
+                                <!-- Grip ribs turn with the knob; the cap and the reflection stay put, lit from the top left. -->
+                                <Path Margin="7" Width="34" Height="34" Stroke="{DynamicResource {x:Static s:DawSkinKeys.KnobGrip}}" StrokeThickness="1.1"
+                                      StrokeStartLineCap="Round" StrokeEndLineCap="Round" RenderTransformOrigin="0.5,0.5" IsHitTestVisible="False"
+                                      Data="M17.00,3.60L17.00,0.40M20.47,4.06L21.30,0.97M23.70,5.40L25.30,2.62M26.48,7.52L28.74,5.26M28.60,10.30L31.38,8.70M29.94,13.53L33.03,12.70M30.40,17.00L33.60,17.00M29.94,20.47L33.03,21.30M28.60,23.70L31.38,25.30M26.48,26.48L28.74,28.74M23.70,28.60L25.30,31.38M20.47,29.94L21.30,33.03M17.00,30.40L17.00,33.60M13.53,29.94L12.70,33.03M10.30,28.60L8.70,31.38M7.52,26.48L5.26,28.74M5.40,23.70L2.62,25.30M4.06,20.47L0.97,21.30M3.60,17.00L0.40,17.00M4.06,13.53L0.97,12.70M5.40,10.30L2.62,8.70M7.52,7.52L5.26,5.26M10.30,5.40L8.70,2.62M13.53,4.06L12.70,0.97">
+                                    <Path.RenderTransform>
+                                        <RotateTransform Angle="{Binding IndicatorAngle, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Ellipse Margin="12.5" Fill="{DynamicResource {x:Static s:DawSkinKeys.KnobCap}}" IsHitTestVisible="False"/>
+                                <Ellipse Margin="7" Fill="{DynamicResource {x:Static s:DawSkinKeys.KnobHighlight}}" IsHitTestVisible="False"/>
                                 <Grid Margin="7" RenderTransformOrigin="0.5,0.5">
                                     <Grid.RenderTransform>
                                         <RotateTransform Angle="{Binding IndicatorAngle, RelativeSource={RelativeSource TemplatedParent}}"/>
