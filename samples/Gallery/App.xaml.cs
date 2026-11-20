@@ -7,6 +7,7 @@ public partial class App : Application
     protected override void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
+        StandardControlThemes.Initialize();
 
         // nDAWControls.Gallery.exe --screenshots <folder> saves a PNG of every catalog entry and of both
         // gallery views, in every skin, and exits. The documentation website uses these images.
