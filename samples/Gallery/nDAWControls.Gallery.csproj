@@ -16,4 +16,17 @@
     <ProjectReference Include="..\..\src\nDAWControls\nDAWControls.csproj" />
   </ItemGroup>
 
+  <!-- Optional: with the NWpfThemes repository (github.com/duskozi/nWpfThemes) cloned next to this one, the
+       standard WPF controls in the gallery follow the skin too. Point NWpfThemesProject elsewhere with
+       -p:NWpfThemesProject=path\to\NWpfThemes.csproj. -->
+  <PropertyGroup>
+    <NWpfThemesProject Condition="'$(NWpfThemesProject)' == ''">$(MSBuildThisFileDirectory)..\..\..\nWpfThemes\src\NWpfThemes\NWpfThemes.csproj</NWpfThemesProject>
+  </PropertyGroup>
+  <PropertyGroup Condition="Exists('$(NWpfThemesProject)')">
+    <DefineConstants>$(DefineConstants);NWPFTHEMES</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="Exists('$(NWpfThemesProject)')">
+    <ProjectReference Include="$(NWpfThemesProject)" />
+  </ItemGroup>
+
 </Project>
